@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D00D636C1D962E330068C6FF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D00D63671D962E330068C6FF /* Alamofire.framework */; };
+		D00D636D1D962E330068C6FF /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D00D63681D962E330068C6FF /* Kingfisher.framework */; };
+		D00D636E1D962E330068C6FF /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D00D63691D962E330068C6FF /* ObjectMapper.framework */; };
+		D00D636F1D962E330068C6FF /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D00D636A1D962E330068C6FF /* SnapKit.framework */; };
+		D00D63701D962E330068C6FF /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D00D636B1D962E330068C6FF /* SVProgressHUD.framework */; };
 		D0315D571D9604980058DC64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0315D561D9604980058DC64 /* AppDelegate.swift */; };
 		D0315D591D9604980058DC64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0315D581D9604980058DC64 /* ViewController.swift */; };
 		D0315D5C1D9604980058DC64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0315D5A1D9604980058DC64 /* Main.storyboard */; };
@@ -34,6 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D00D63671D962E330068C6FF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		D00D63681D962E330068C6FF /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		D00D63691D962E330068C6FF /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		D00D636A1D962E330068C6FF /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		D00D636B1D962E330068C6FF /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		D0315D531D9604980058DC64 /* StartKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StartKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0315D561D9604980058DC64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0315D581D9604980058DC64 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +64,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D00D636C1D962E330068C6FF /* Alamofire.framework in Frameworks */,
+				D00D636D1D962E330068C6FF /* Kingfisher.framework in Frameworks */,
+				D00D636E1D962E330068C6FF /* ObjectMapper.framework in Frameworks */,
+				D00D636F1D962E330068C6FF /* SnapKit.framework in Frameworks */,
+				D00D63701D962E330068C6FF /* SVProgressHUD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +89,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D00D63661D962E330068C6FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D00D63671D962E330068C6FF /* Alamofire.framework */,
+				D00D63681D962E330068C6FF /* Kingfisher.framework */,
+				D00D63691D962E330068C6FF /* ObjectMapper.framework */,
+				D00D636A1D962E330068C6FF /* SnapKit.framework */,
+				D00D636B1D962E330068C6FF /* SVProgressHUD.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D0315D4A1D9604980058DC64 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +108,7 @@
 				D0315D6A1D9604980058DC64 /* StartKitTests */,
 				D0315D751D9604980058DC64 /* StartKitUITests */,
 				D0315D541D9604980058DC64 /* Products */,
+				D00D63661D962E330068C6FF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,6 +163,7 @@
 				D0315D4F1D9604980058DC64 /* Sources */,
 				D0315D501D9604980058DC64 /* Frameworks */,
 				D0315D511D9604980058DC64 /* Resources */,
+				D00D63651D962DF70068C6FF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -253,6 +282,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D00D63651D962DF70068C6FF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D0315D4F1D9604980058DC64 /* Sources */ = {
@@ -410,6 +460,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = StartKit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -424,6 +478,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = StartKit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -507,6 +565,7 @@
 				D0315D7D1D9604980058DC64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0315D7E1D9604980058DC64 /* Build configuration list for PBXNativeTarget "StartKitTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +574,7 @@
 				D0315D801D9604980058DC64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0315D811D9604980058DC64 /* Build configuration list for PBXNativeTarget "StartKitUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +583,7 @@
 				D0315D831D9604980058DC64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

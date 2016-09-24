@@ -1,0 +1,5 @@
+github "Alamofire/Alamofire" ~> 4.0
+github "onevcat/Kingfisher" ~> 3.0
+github "SnapKit/SnapKit" ~> 3.0
+github "SVProgressHUD/SVProgressHUD"
+github "Hearst-DD/ObjectMapper" ~> 2.0
