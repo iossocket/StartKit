@@ -11,11 +11,6 @@ sudo gem install fastlane
 fastlane ios test
 ```
 Runs all the tests
-### ios startkit
-```
-fastlane ios startkit
-```
-
 ### ios beta
 ```
 fastlane ios beta
