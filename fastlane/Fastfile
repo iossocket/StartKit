@@ -34,7 +34,7 @@ platform :ios do
       app_identifier: "com.thoughtworks.StartKit"
     )
     gym(
-      configuration: "Ad Hoc",
+      configuration: "Release",
       scheme: "StartKit",
       sdk: "iphoneos10.0",
       clean: true,
@@ -42,21 +42,9 @@ platform :ios do
       include_symbols: true,
       export_method: "ad-hoc"
     )
-  end
-
-  lane :startkit do
-    test
-    sign(
-      app_identifier: "com.thoughtworks.StartKit",
-      username: "avx302@gmail.com",
-      filename: "startkit.mobileprovision",
-      adhoc: true,
-      team_id: "QMP4D362DR",
-      cert_owner_name: "Xueliang Zhu"
-    )
     hockey(
       api_token: '2e6aadb3922b4f7182f970e4cc3bb9b7',
-      ipa: './app.ipa'
+      ipa: './StartKit.ipa'
     )
   end
 
@@ -64,8 +52,8 @@ platform :ios do
   desc "This will also make sure the profile is up to date"
   lane :beta do
     # match(type: "appstore") # more information: https://codesigning.guide
-    gym(scheme: "StartKit") # Build your app - more options available
-    pilot
+    # gym(scheme: "StartKit") # Build your app - more options available
+    # pilot
 
     # sh "your_script.sh"
     # You can also use other beta testing services here (run `fastlane actions`)
@@ -75,8 +63,8 @@ platform :ios do
   lane :release do
     # match(type: "appstore")
     # snapshot
-    gym(scheme: "StartKit") # Build your app - more options available
-    deliver(force: true)
+    # gym(scheme: "StartKit") # Build your app - more options available
+    # deliver(force: true)
     # frameit
   end
 
