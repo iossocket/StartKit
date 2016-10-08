@@ -6,7 +6,7 @@ platform :ios do
 
   desc "Setup carthage"
   lane :cart do
-    carthage update --platform iOS
+    sh "carthage update --platform iOS"
   end
 
   desc "Runs all the tests"
