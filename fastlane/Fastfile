@@ -9,6 +9,11 @@ platform :ios do
     sh "carthage update --platform iOS"
   end
 
+  desc "Code stype check"
+  lane :lint do
+    swiftlint
+  end
+
   desc "Runs all the tests"
   lane :test do
     scan(
@@ -47,6 +52,7 @@ platform :ios do
 
   desc "Test, build and deploy beta to hockeyapp"
   lane :beta do
+    lint
     test
     build
     deploy_beta
