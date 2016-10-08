@@ -1,25 +1,40 @@
 # StartKit
 
-* Use Swift 3.0;
-* Architecture MVVM;
-* Use Carthage to manage dependencies;
-* Required 3rd part library: Alamofire, Kingfisher, ObjectMapper, SnapKit, SVProgressHUD;
-* SwiftLint to enforce Swift style and conventions;
-* Security scan: Danger;
-* Use Jenkins as CI;
-* Use fastlane as build and package tool;
-* AdHoc publish use HockeyApp.
+### Admin
+
+### Setup Development Env
+
+* Install Xcode 8
+* Install rbenv
+* Install Carthage
+
+	```
+	brew install carthage
+	```
+* Install Fastlane
+
+	```
+	gem install fastlane --verbose
+	```
+* Install and Config SwiftLint
+
+	```
+	brew install swiftlint
+	```
 
 ### Init Project
-* Install Carthage, and then run:
-```
-carthage update --platform iOS
-```
+* Clone the iOS StartKit Repo
 
-* Config SwiftLint:
-```
-brew install swiftlint
-```
+	```
+	git clone https://github.com/iossocket/StartKit.git
+	note: we will move it to a ThoughtWorks private repo later.
+	```
+
+* Install Carthage, and then run:
+
+	```
+	carthage update --platform iOS
+	```
 
 ### Setup Jenkins
 
@@ -50,4 +65,16 @@ brew install swiftlint
 6. Configure project
 
 	Configure `Build Triggers` -> Choose Pipeline defination `Pipleline script from SCM` -> Fill the form with the created credential.
+	
+
+### About StartKit
+* Use Swift 3.0;
+* Architecture MVVM;
+* Use Carthage to manage dependencies;
+* Required 3rd part library: Alamofire, Kingfisher, ObjectMapper, SnapKit, SVProgressHUD;
+* SwiftLint to enforce Swift style and conventions;
+* Security scan: Danger;
+* Use Jenkins as CI;
+* Use fastlane as build and package tool;
+* AdHoc publish use HockeyApp.
 
