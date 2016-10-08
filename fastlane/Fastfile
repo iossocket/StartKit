@@ -31,7 +31,8 @@ platform :ios do
     )
     match(git_url: "git@bitbucket.org:iossocket/iosstartkitmatchrepo.git",
       type: "adhoc",
-      app_identifier: "com.thoughtworks.StartKit"
+      app_identifier: "com.thoughtworks.StartKit",
+      readonly: true
     )
     gym(
       configuration: "Release",
