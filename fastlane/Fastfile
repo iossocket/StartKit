@@ -6,7 +6,7 @@ platform :ios do
 
   desc 'Clear build folder and update carthage.'
   lane :prepare do
-      carthage_update
+      # carthage_update
       clear_build_files
   end
 
