@@ -6,7 +6,10 @@ platform :ios do
 
   desc "Setup carthage"
   lane :cart do
-    sh "carthage update --platform iOS"
+    carthage(
+      command: "update",
+      platform: "iOS"
+    )
   end
 
   desc "Code stype check"
