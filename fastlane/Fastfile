@@ -4,6 +4,11 @@ default_platform :ios
 
 platform :ios do
 
+  desc "Add testing devices. Run by the codebase manager."
+  lane :add_devices do
+    register_devices(devices_file: "./devices.txt")
+  end
+
   desc 'Clear build folder and update carthage.'
   lane :prepare do
       # carthage_update
@@ -50,10 +55,12 @@ platform :ios do
 
   desc "Build for ad-hoc"
   lane :build do
-    match(git_url: "git@bitbucket.org:iossocket/iosstartkitmatchrepo.git",
+    match(
+      git_url: "git@bitbucket.org:iossocket/iosstartkitmatchrepo.git",
       type: "adhoc",
       app_identifier: "com.thoughtworks.StartKit",
-      readonly: true
+      readonly: true,
+      force_for_new_devices: true
     )
     gym(
       configuration: "Release",
