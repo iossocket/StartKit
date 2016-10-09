@@ -4,12 +4,23 @@ default_platform :ios
 
 platform :ios do
 
-  desc "Setup carthage"
-  lane :cart do
+  desc 'Clear build folder and update carthage.'
+  lane :prepare do
+      carthage_update
+      clear_build_files
+  end
+
+  desc "Update carthage"
+  lane :carthage_update do
     carthage(
       command: "update",
       platform: "iOS"
     )
+  end
+
+  desc 'Clear build files.'
+  lane :clear_build_files do
+      sh "rm -rf ~/Library/Developer/Xcode/DerivedData/*"
   end
 
   desc "Code stype check"
