@@ -28,17 +28,27 @@ platform :ios do
     swiftlint
   end
 
-  desc "Runs all the tests"
-  lane :test do
+  desc "Run all tests on iPhone 6."
+  lane :run_test do
     scan(
       scheme: "StartKitTests",
+      configuration: "Debug",
       clean: true,
       device: "iPhone 6",
-      output_types: "html"
+      output_types: "html",
+      buildlog_path: './build',
+      output_directory: './build/reports'
     )
   end
 
-  desc "Setup profile"
+  desc "Checkin. Run this everytime before git push."
+  lane :checkin do
+    prepare
+    lint
+    run_test
+  end
+
+  desc "Build for ad-hoc"
   lane :build do
     match(git_url: "git@bitbucket.org:iossocket/iosstartkitmatchrepo.git",
       type: "adhoc",
@@ -66,8 +76,9 @@ platform :ios do
 
   desc "Test, build and deploy beta to hockeyapp"
   lane :beta do
+    prepare
     lint
-    test
+    run_test
     build
     deploy_beta
   end
