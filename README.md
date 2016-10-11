@@ -18,26 +18,23 @@ This `iOS StarterKit` based on：
 
 ## Admin Setup (codebase manager)
 
-#### Apple ID
-   Apply account for apple developer program
+#### Step-1: Apply an Apple ID
+   1. Apply account for apple developer program
 
-#### Testing devices
-   Get all the testing device’s UUID
-
-#### HockeyAPP Setup
-   1. Register a HockeyApp account
-   2. Create an app manually in HockeyApp (with your project bundle identifier)
-
-#### Codebase Setup
+#### Step-2: Setup Codebase
 * Clone the iOS StartKit Repo
 
 	```
 	git clone https://github.com/iossocket/StartKit.git
 	note: we will move it to a ThoughtWorks private repo later.
 	```
-* Replace `StartKit` related words in all the places with your own project name, commit and push to your own githut repo.
+* Replace `StartKit` related words in all the places with your own project name, commit and push to your own github repo.
 
-#### Fastlane match Setup
+#### Step-3: Config Apple Development Portal
+   1. Create an `App Id` for your project
+   2. Add all the testing devices' UUID in `devices`
+
+#### Step-4: Setup certificates and provisioning profiles with `fastlane match`
 
 ```
 Reference: `Usage` - `Setup` at `https://github.com/fastlane/fastlane/tree/master/match`
@@ -45,12 +42,19 @@ Reference: `Usage` - `Setup` at `https://github.com/fastlane/fastlane/tree/maste
 
    1. Create a **private** repo (name it something like certificates)
    2. Write all the testing device’s UUID in the `./devices.txt` file of your projects
-   3. Run ‘match init’ with the private repo URL
+   3. Run `match init` with the private repo URL
    4. Modify Matchfile: app_identifier, username, URL
-   5. Run ‘match adhoc'
+   5. Run `match development`, `match adhoc` or `match app_store` to install certificates and profiles(This will upload them to the private repo as well)
    6. Run `fastlane add_devices` every time new device is added into the file
 
-#### Jenkins Setup
+#### Step-5: Setup Beta Testing platform: `HockeyAPP`
+   1. Register a HockeyApp account
+   2. Create an app manually in HockeyApp (with your project bundle identifier)
+   3. Create an `API Token` for your project from `account settings` -> `API Tokens` in HockeyApp
+   4. Modify `fastlane deploy_beta` lane in your `Fastfile` with the `api_token`
+
+   
+#### Step-6: Setup CI: `Jenkins` (on CI server)
 
 1. Install Jenkins
 
