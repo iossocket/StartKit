@@ -51,6 +51,8 @@ This `iOS StarterKit` based on：
 	```
 * Replace `StartKit` related words in all the places with your own project name, commit and push to your own github repo.
 
+#### Step-2: Alternatively, create a new project from xcode manually.
+
 #### Step-3: Config Apple Development Portal
    1. Create an `App Id` for your project
    2. Add all the testing devices' UUID in `devices`
