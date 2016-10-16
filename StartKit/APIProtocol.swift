@@ -18,5 +18,5 @@ enum RequestEncoding {
 }
 
 protocol APIProtocol {
-    func request(_ url: String, method: RequestMethod, encoding: RequestEncoding, params: Dictionary<String, Any>, headers: Dictionary<String, Any>, success: @escaping (_ result: Any) -> Void, failure: @escaping (_ error: Error) -> Void)
+    func request(_ url: String, method: RequestMethod, encoding: RequestEncoding, params: Dictionary<String, Any>?, headers: Dictionary<String, Any>?, success: @escaping (_ result: Any) -> Void, failure: @escaping (_ error: Error) -> Void)
 }
