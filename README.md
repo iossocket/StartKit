@@ -1,5 +1,7 @@
 # iOS StarterKit
 
+#### There is a demo in `demo` branch
+
 ## iOS StarterKit Introduction
 This `iOS StarterKit` based on：
 
