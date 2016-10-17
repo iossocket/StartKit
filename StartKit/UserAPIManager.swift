@@ -7,13 +7,15 @@
 //
 
 import Foundation
+import ObjectMapper
 
 enum UserApiError: Error {
     case loginFailed
+    case profileFailed
 }
 
 enum UserResult<T> {
-    case userToken(value: T)
+    case success(value: T)
     case failure(error: UserApiError)
 }
 
@@ -34,9 +36,22 @@ class UserAPIManager {
                 handler(.failure(error: .loginFailed))
                 return
             }
-            handler(.userToken(value: token))
+            handler(.success(value: token))
         }) { error in
             handler(.failure(error: .loginFailed))
+        }
+    }
+    
+    func profile(token: String, handler: @escaping (UserResult<User>) -> Void) {
+        let headers = ["Authorization": "token \(token)"]
+        baseApiManager.request("https://api.github.com/user", method: .get, encoding: .json, params: nil, headers: headers, success: { result in
+            guard let user = Mapper<User>().map(JSONObject: result) else {
+                handler(.failure(error: .profileFailed))
+                return
+            }
+            handler(.success(value: user))
+        }) { error in
+            handler(.failure(error: .profileFailed))
         }
     }
 }

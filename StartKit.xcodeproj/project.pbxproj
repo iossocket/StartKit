@@ -22,6 +22,7 @@
 		D064D3641DB3A86600A46088 /* BaseAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D3631DB3A86600A46088 /* BaseAPIManager.swift */; };
 		D064D3661DB3A88500A46088 /* APIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D3651DB3A88500A46088 /* APIProtocol.swift */; };
 		D064D3691DB3B83500A46088 /* UserAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D3681DB3B83500A46088 /* UserAPIManager.swift */; };
+		D064D36C1DB4572100A46088 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D36B1DB4572100A46088 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		D064D3631DB3A86600A46088 /* BaseAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPIManager.swift; sourceTree = "<group>"; };
 		D064D3651DB3A88500A46088 /* APIProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIProtocol.swift; sourceTree = "<group>"; };
 		D064D3681DB3B83500A46088 /* UserAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAPIManager.swift; sourceTree = "<group>"; };
+		D064D36B1DB4572100A46088 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 		D0315D551D9604980058DC64 /* StartKit */ = {
 			isa = PBXGroup;
 			children = (
+				D064D36A1DB4571300A46088 /* Model */,
 				D064D3671DB3B7CE00A46088 /* Service */,
 				D064D3621DB3A66000A46088 /* Config */,
 				D0315D561D9604980058DC64 /* AppDelegate.swift */,
@@ -176,6 +179,14 @@
 				D064D3681DB3B83500A46088 /* UserAPIManager.swift */,
 			);
 			name = Service;
+			sourceTree = "<group>";
+		};
+		D064D36A1DB4571300A46088 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D064D36B1DB4572100A46088 /* User.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +348,7 @@
 			files = (
 				D0315D591D9604980058DC64 /* LoginViewController.swift in Sources */,
 				D064D3641DB3A86600A46088 /* BaseAPIManager.swift in Sources */,
+				D064D36C1DB4572100A46088 /* User.swift in Sources */,
 				D0315D571D9604980058DC64 /* AppDelegate.swift in Sources */,
 				D064D3661DB3A88500A46088 /* APIProtocol.swift in Sources */,
 				D064D3691DB3B83500A46088 /* UserAPIManager.swift in Sources */,
