@@ -11,8 +11,9 @@ import Alamofire
 
 class BaseAPIManager: APIProtocol {
     
-    func request(_ url: String, method: RequestMethod, encoding: RequestEncoding, params: Dictionary<String, Any>?, headers: Dictionary<String, Any>?, success: @escaping (_ result: Any) -> Void, failure: @escaping (_ error: Error) -> Void) {
-        Alamofire.request(url, method: alamofireMethod(method), parameters: params, encoding: alamofireEncoding(encoding), headers: nil).responseJSON { response in
+    func request(_ url: String, method: RequestMethod, encoding: RequestEncoding, params: Dictionary<String, Any>?, headers: Dictionary<String, String>?, success: @escaping (_ result: Any) -> Void, failure: @escaping (_ error: Error) -> Void) {
+        
+        Alamofire.request(url, method: alamofireMethod(method), parameters: params, encoding: alamofireEncoding(encoding), headers: headers).responseJSON { response in
             switch response.result {
             case .success(let value):
                 success(value)

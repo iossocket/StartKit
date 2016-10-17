@@ -21,6 +21,7 @@
 		D0315D771D9604980058DC64 /* StartKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0315D761D9604980058DC64 /* StartKitUITests.swift */; };
 		D064D3641DB3A86600A46088 /* BaseAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D3631DB3A86600A46088 /* BaseAPIManager.swift */; };
 		D064D3661DB3A88500A46088 /* APIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D3651DB3A88500A46088 /* APIProtocol.swift */; };
+		D064D3691DB3B83500A46088 /* UserAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D3681DB3B83500A46088 /* UserAPIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		D0315D781D9604980058DC64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D064D3631DB3A86600A46088 /* BaseAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPIManager.swift; sourceTree = "<group>"; };
 		D064D3651DB3A88500A46088 /* APIProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIProtocol.swift; sourceTree = "<group>"; };
+		D064D3681DB3B83500A46088 /* UserAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAPIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			children = (
 				D064D3631DB3A86600A46088 /* BaseAPIManager.swift */,
 				D064D3651DB3A88500A46088 /* APIProtocol.swift */,
+				D064D3681DB3B83500A46088 /* UserAPIManager.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				D064D3641DB3A86600A46088 /* BaseAPIManager.swift in Sources */,
 				D0315D571D9604980058DC64 /* AppDelegate.swift in Sources */,
 				D064D3661DB3A88500A46088 /* APIProtocol.swift in Sources */,
+				D064D3691DB3B83500A46088 /* UserAPIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

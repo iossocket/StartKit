@@ -19,6 +19,13 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginAction(_ sender: AnyObject) {
-        
+        UserAPIManager().login(userName: userNameTextField.text!, password: passwordTextField.text!, handler: { result in
+            switch result {
+            case .userToken(let token):
+                print(token)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        })
     }
 }
