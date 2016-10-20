@@ -24,6 +24,8 @@
 		D064D3691DB3B83500A46088 /* UserAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D3681DB3B83500A46088 /* UserAPIManager.swift */; };
 		D064D36C1DB4572100A46088 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D36B1DB4572100A46088 /* User.swift */; };
 		D064D38A1DB8460300A46088 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D064D3891DB8460300A46088 /* KeychainAccess.framework */; };
+		D064D38E1DB846E400A46088 /* SecretStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D38D1DB846E400A46088 /* SecretStoreProtocol.swift */; };
+		D064D3901DB8475D00A46088 /* KeychainSecretStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D38F1DB8475D00A46088 /* KeychainSecretStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,9 @@
 		D064D3681DB3B83500A46088 /* UserAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAPIManager.swift; sourceTree = "<group>"; };
 		D064D36B1DB4572100A46088 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D064D3891DB8460300A46088 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
+		D064D38D1DB846E400A46088 /* SecretStoreProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecretStoreProtocol.swift; sourceTree = "<group>"; };
+		D064D38F1DB8475D00A46088 /* KeychainSecretStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSecretStore.swift; sourceTree = "<group>"; };
+		D064D3911DB8494900A46088 /* StartKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StartKit.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +142,7 @@
 		D0315D551D9604980058DC64 /* StartKit */ = {
 			isa = PBXGroup;
 			children = (
+				D064D3911DB8494900A46088 /* StartKit.entitlements */,
 				D064D36A1DB4571300A46088 /* Model */,
 				D064D3671DB3B7CE00A46088 /* Service */,
 				D064D3621DB3A66000A46088 /* Config */,
@@ -178,9 +184,8 @@
 		D064D3671DB3B7CE00A46088 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				D064D3631DB3A86600A46088 /* BaseAPIManager.swift */,
-				D064D3651DB3A88500A46088 /* APIProtocol.swift */,
-				D064D3681DB3B83500A46088 /* UserAPIManager.swift */,
+				D064D38C1DB8467500A46088 /* SecretStore */,
+				D064D38B1DB8466B00A46088 /* API */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -191,6 +196,25 @@
 				D064D36B1DB4572100A46088 /* User.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		D064D38B1DB8466B00A46088 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D064D3631DB3A86600A46088 /* BaseAPIManager.swift */,
+				D064D3651DB3A88500A46088 /* APIProtocol.swift */,
+				D064D3681DB3B83500A46088 /* UserAPIManager.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		D064D38C1DB8467500A46088 /* SecretStore */ = {
+			isa = PBXGroup;
+			children = (
+				D064D38D1DB846E400A46088 /* SecretStoreProtocol.swift */,
+				D064D38F1DB8475D00A46088 /* KeychainSecretStore.swift */,
+			);
+			name = SecretStore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +288,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = QMP4D362DR;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					D0315D661D9604980058DC64 = {
 						CreatedOnToolsVersion = 8.0;
@@ -354,6 +383,8 @@
 				D0315D591D9604980058DC64 /* LoginViewController.swift in Sources */,
 				D064D3641DB3A86600A46088 /* BaseAPIManager.swift in Sources */,
 				D064D36C1DB4572100A46088 /* User.swift in Sources */,
+				D064D3901DB8475D00A46088 /* KeychainSecretStore.swift in Sources */,
+				D064D38E1DB846E400A46088 /* SecretStoreProtocol.swift in Sources */,
 				D0315D571D9604980058DC64 /* AppDelegate.swift in Sources */,
 				D064D3661DB3A88500A46088 /* APIProtocol.swift in Sources */,
 				D064D3691DB3B83500A46088 /* UserAPIManager.swift in Sources */,
@@ -506,6 +537,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = StartKit/StartKit.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEVELOPMENT_TEAM = QMP4D362DR;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -528,6 +560,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = StartKit/StartKit.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = QMP4D362DR;
