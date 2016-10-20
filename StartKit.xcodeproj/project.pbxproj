@@ -23,6 +23,7 @@
 		D064D3661DB3A88500A46088 /* APIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D3651DB3A88500A46088 /* APIProtocol.swift */; };
 		D064D3691DB3B83500A46088 /* UserAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D3681DB3B83500A46088 /* UserAPIManager.swift */; };
 		D064D36C1DB4572100A46088 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D36B1DB4572100A46088 /* User.swift */; };
+		D064D38A1DB8460300A46088 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D064D3891DB8460300A46088 /* KeychainAccess.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		D064D3651DB3A88500A46088 /* APIProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIProtocol.swift; sourceTree = "<group>"; };
 		D064D3681DB3B83500A46088 /* UserAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAPIManager.swift; sourceTree = "<group>"; };
 		D064D36B1DB4572100A46088 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D064D3891DB8460300A46088 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D064D38A1DB8460300A46088 /* KeychainAccess.framework in Frameworks */,
 				D00D636C1D962E330068C6FF /* Alamofire.framework in Frameworks */,
 				D00D636D1D962E330068C6FF /* Kingfisher.framework in Frameworks */,
 				D00D636E1D962E330068C6FF /* ObjectMapper.framework in Frameworks */,
@@ -100,6 +103,7 @@
 		D00D63661D962E330068C6FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D064D3891DB8460300A46088 /* KeychainAccess.framework */,
 				D00D63671D962E330068C6FF /* Alamofire.framework */,
 				D00D63681D962E330068C6FF /* Kingfisher.framework */,
 				D00D63691D962E330068C6FF /* ObjectMapper.framework */,
@@ -332,6 +336,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
 			);
 			outputPaths = (
 			);

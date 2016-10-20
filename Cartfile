@@ -3,3 +3,4 @@ github "onevcat/Kingfisher" ~> 3.0
 github "SnapKit/SnapKit" == 3.0.1
 github "SVProgressHUD/SVProgressHUD"
 github "Hearst-DD/ObjectMapper" ~> 2.0
+github "kishikawakatsumi/KeychainAccess"
