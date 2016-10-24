@@ -26,6 +26,9 @@
 		D064D38A1DB8460300A46088 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D064D3891DB8460300A46088 /* KeychainAccess.framework */; };
 		D064D38E1DB846E400A46088 /* SecretStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D38D1DB846E400A46088 /* SecretStoreProtocol.swift */; };
 		D064D3901DB8475D00A46088 /* KeychainSecretStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D38F1DB8475D00A46088 /* KeychainSecretStore.swift */; };
+		D064D3D31DBE0DE200A46088 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D064D3D21DBE0DE200A46088 /* Login.storyboard */; };
+		D064D3D51DBE11EE00A46088 /* RepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D3D41DBE11EE00A46088 /* RepoViewController.swift */; };
+		D064D3D71DBE12BC00A46088 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D3D61DBE12BC00A46088 /* MeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,9 @@
 		D064D38D1DB846E400A46088 /* SecretStoreProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecretStoreProtocol.swift; sourceTree = "<group>"; };
 		D064D38F1DB8475D00A46088 /* KeychainSecretStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSecretStore.swift; sourceTree = "<group>"; };
 		D064D3911DB8494900A46088 /* StartKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StartKit.entitlements; sourceTree = "<group>"; };
+		D064D3D21DBE0DE200A46088 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		D064D3D41DBE11EE00A46088 /* RepoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoViewController.swift; sourceTree = "<group>"; };
+		D064D3D61DBE12BC00A46088 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +154,10 @@
 				D064D3621DB3A66000A46088 /* Config */,
 				D0315D561D9604980058DC64 /* AppDelegate.swift */,
 				D0315D581D9604980058DC64 /* LoginViewController.swift */,
+				D064D3D41DBE11EE00A46088 /* RepoViewController.swift */,
+				D064D3D61DBE12BC00A46088 /* MeViewController.swift */,
 				D0315D5A1D9604980058DC64 /* Main.storyboard */,
+				D064D3D21DBE0DE200A46088 /* Login.storyboard */,
 			);
 			path = StartKit;
 			sourceTree = "<group>";
@@ -331,6 +340,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D064D3D31DBE0DE200A46088 /* Login.storyboard in Resources */,
 				D0315D611D9604980058DC64 /* LaunchScreen.storyboard in Resources */,
 				D0315D5E1D9604980058DC64 /* Assets.xcassets in Resources */,
 				D0315D5C1D9604980058DC64 /* Main.storyboard in Resources */,
@@ -380,8 +390,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D064D3D71DBE12BC00A46088 /* MeViewController.swift in Sources */,
 				D0315D591D9604980058DC64 /* LoginViewController.swift in Sources */,
 				D064D3641DB3A86600A46088 /* BaseAPIManager.swift in Sources */,
+				D064D3D51DBE11EE00A46088 /* RepoViewController.swift in Sources */,
 				D064D36C1DB4572100A46088 /* User.swift in Sources */,
 				D064D3901DB8475D00A46088 /* KeychainSecretStore.swift in Sources */,
 				D064D38E1DB846E400A46088 /* SecretStoreProtocol.swift in Sources */,

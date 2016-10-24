@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class LoginViewController: UIViewController {
 
@@ -15,17 +16,31 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     @IBAction func loginAction(_ sender: AnyObject) {
+        SVProgressHUD.show()
         UserAPIManager().login(userName: userNameTextField.text!, password: passwordTextField.text!, handler: { result in
             switch result {
-            case .userToken(let token):
-                print(token)
+            case .success(let token):
+                KeychainSecretStore().saveToken(token: token)
+                SVProgressHUD.dismiss()
+            case .failure(let error):
+                SVProgressHUD.showError(withStatus: error.localizedDescription)
+            }
+        })
+    }
+    
+    func getUserInfo() {
+        guard let token = KeychainSecretStore().getToken() else { return }
+        UserAPIManager().profile(token: token) { result in
+            switch result {
+            case .success(let user):
+                print(user.name)
+                print(user.avatarUrl)
             case .failure(let error):
                 print(error.localizedDescription)
             }
-        })
+        }
     }
 }

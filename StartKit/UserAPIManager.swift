@@ -32,6 +32,7 @@ class UserAPIManager {
         let headers = ["Authorization": "Basic \(base64Credentials)"]
         let params: Dictionary<String, Any> = ["scopes": ["repo", "user"], "note": "GitHubDemo"]
         baseApiManager.request("https://api.github.com/authorizations", method: .post, encoding: .json, params: params, headers: headers, success: { result in
+            print(result)
             guard let dict = result as? Dictionary<String, Any>, let token = dict["token"] as? String else {
                 handler(.failure(error: .loginFailed))
                 return
