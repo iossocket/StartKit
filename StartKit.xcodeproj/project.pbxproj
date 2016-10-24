@@ -148,16 +148,10 @@
 		D0315D551D9604980058DC64 /* StartKit */ = {
 			isa = PBXGroup;
 			children = (
-				D064D3911DB8494900A46088 /* StartKit.entitlements */,
-				D064D36A1DB4571300A46088 /* Model */,
-				D064D3671DB3B7CE00A46088 /* Service */,
-				D064D3621DB3A66000A46088 /* Config */,
-				D0315D561D9604980058DC64 /* AppDelegate.swift */,
-				D0315D581D9604980058DC64 /* LoginViewController.swift */,
-				D064D3D41DBE11EE00A46088 /* RepoViewController.swift */,
-				D064D3D61DBE12BC00A46088 /* MeViewController.swift */,
-				D0315D5A1D9604980058DC64 /* Main.storyboard */,
-				D064D3D21DBE0DE200A46088 /* Login.storyboard */,
+				D064D3DB1DBE2FE600A46088 /* Login */,
+				D064D3DA1DBE2FC900A46088 /* Me */,
+				D064D3D91DBE2FA000A46088 /* Repo */,
+				D064D3D81DBE2F8F00A46088 /* App */,
 			);
 			path = StartKit;
 			sourceTree = "<group>";
@@ -183,6 +177,7 @@
 		D064D3621DB3A66000A46088 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				D064D3911DB8494900A46088 /* StartKit.entitlements */,
 				D0315D5D1D9604980058DC64 /* Assets.xcassets */,
 				D0315D5F1D9604980058DC64 /* LaunchScreen.storyboard */,
 				D0315D621D9604980058DC64 /* Info.plist */,
@@ -212,7 +207,6 @@
 			children = (
 				D064D3631DB3A86600A46088 /* BaseAPIManager.swift */,
 				D064D3651DB3A88500A46088 /* APIProtocol.swift */,
-				D064D3681DB3B83500A46088 /* UserAPIManager.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -224,6 +218,52 @@
 				D064D38F1DB8475D00A46088 /* KeychainSecretStore.swift */,
 			);
 			name = SecretStore;
+			sourceTree = "<group>";
+		};
+		D064D3D81DBE2F8F00A46088 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D064D3671DB3B7CE00A46088 /* Service */,
+				D064D3621DB3A66000A46088 /* Config */,
+				D0315D561D9604980058DC64 /* AppDelegate.swift */,
+				D0315D5A1D9604980058DC64 /* Main.storyboard */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		D064D3D91DBE2FA000A46088 /* Repo */ = {
+			isa = PBXGroup;
+			children = (
+				D064D3D41DBE11EE00A46088 /* RepoViewController.swift */,
+			);
+			name = Repo;
+			sourceTree = "<group>";
+		};
+		D064D3DA1DBE2FC900A46088 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				D064D3D61DBE12BC00A46088 /* MeViewController.swift */,
+			);
+			name = Me;
+			sourceTree = "<group>";
+		};
+		D064D3DB1DBE2FE600A46088 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D064D3DC1DBE303000A46088 /* Service */,
+				D064D36A1DB4571300A46088 /* Model */,
+				D064D3D21DBE0DE200A46088 /* Login.storyboard */,
+				D0315D581D9604980058DC64 /* LoginViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		D064D3DC1DBE303000A46088 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D064D3681DB3B83500A46088 /* UserAPIManager.swift */,
+			);
+			name = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
