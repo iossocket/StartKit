@@ -25,4 +25,8 @@ struct KeychainSecretStore: SecretStoreProtocol {
     func getToken() -> String? {
         return keychain[GITHUB_TOKEN]
     }
+    
+    func emptyToken() {
+        keychain[GITHUB_TOKEN] = nil
+    }
 }
