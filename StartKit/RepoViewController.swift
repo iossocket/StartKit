@@ -16,8 +16,11 @@ class RepoViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let storyBoard = UIStoryboard(name: "Login", bundle: nil)
-        let loginVC = storyBoard.instantiateViewController(withIdentifier: "LoginViewController")
-        self.present(loginVC, animated: true, completion: nil)
+        guard let _ = KeychainSecretStore().getToken() else {
+            let loginVC = UIStoryboard(name: "Login", bundle: nil)
+                .instantiateViewController(withIdentifier: "LoginViewController")
+            self.present(loginVC, animated: true, completion: nil)
+            return
+        }
     }
 }
