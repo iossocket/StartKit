@@ -9,7 +9,7 @@
 import Foundation
 
 protocol SecretStoreProtocol {
-    func saveToken(token: String?)
-    func getToken() -> String
+    func saveToken(token: String)
+    func getToken() -> String?
     func emptyToken()
 }
