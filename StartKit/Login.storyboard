@@ -29,40 +29,49 @@
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBH-ed-Y4g">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOv-He-B9v">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXM-6Q-YP0">
-                                <color key="backgroundColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.24313725490196078" green="0.29019607843137257" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="175" id="arP-xy-K1T"/>
+                                    <constraint firstAttribute="height" constant="44" id="Za1-dn-eAZ"/>
+                                    <constraint firstAttribute="width" constant="200" id="arP-xy-K1T"/>
                                 </constraints>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginAction:" destination="dxl-BY-2gl" eventType="touchUpInside" id="TfF-ot-kSh"/>
                                 </connections>
                             </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="jCn-Oz-9rB"/>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.24705882352941178" green="0.31764705882352939" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nBH-ed-Y4g" firstAttribute="leading" secondItem="pps-ug-viE" secondAttribute="leading" id="4ec-RA-hFw"/>
                             <constraint firstItem="jl3-He-RNJ" firstAttribute="top" secondItem="OOv-He-B9v" secondAttribute="bottom" constant="8" id="8Q3-QL-DDh"/>
                             <constraint firstItem="AXM-6Q-YP0" firstAttribute="top" secondItem="jl3-He-RNJ" secondAttribute="bottom" constant="43" id="8VK-aa-GYz"/>
-                            <constraint firstItem="pps-ug-viE" firstAttribute="centerY" secondItem="mKM-RV-vpF" secondAttribute="centerY" constant="-60" id="Cmp-Ig-tSi"/>
+                            <constraint firstItem="pps-ug-viE" firstAttribute="centerY" secondItem="mKM-RV-vpF" secondAttribute="centerY" constant="-40" id="Cmp-Ig-tSi"/>
                             <constraint firstItem="jl3-He-RNJ" firstAttribute="top" secondItem="pps-ug-viE" secondAttribute="bottom" constant="45.5" id="FLT-2K-Juk"/>
                             <constraint firstItem="pps-ug-viE" firstAttribute="leading" secondItem="mKM-RV-vpF" secondAttribute="leading" constant="60" id="Flo-H5-2f5"/>
                             <constraint firstItem="jl3-He-RNJ" firstAttribute="width" secondItem="pps-ug-viE" secondAttribute="width" id="OGu-OR-CdO"/>
                             <constraint firstItem="OOv-He-B9v" firstAttribute="leading" secondItem="jl3-He-RNJ" secondAttribute="leading" id="Vvc-pG-nw6"/>
                             <constraint firstItem="jl3-He-RNJ" firstAttribute="centerX" secondItem="mKM-RV-vpF" secondAttribute="centerX" id="WwA-Rt-r40"/>
+                            <constraint firstItem="nBH-ed-Y4g" firstAttribute="top" secondItem="jCn-Oz-9rB" secondAttribute="bottom" constant="33" id="jYr-XC-O4L"/>
                             <constraint firstItem="pps-ug-viE" firstAttribute="top" secondItem="nBH-ed-Y4g" secondAttribute="bottom" constant="8.5" id="osN-rQ-OAf"/>
                             <constraint firstAttribute="trailing" secondItem="pps-ug-viE" secondAttribute="trailing" constant="60" id="qkD-dg-7hJ"/>
+                            <constraint firstItem="jCn-Oz-9rB" firstAttribute="centerX" secondItem="mKM-RV-vpF" secondAttribute="centerX" id="uOU-zR-qHQ"/>
                             <constraint firstItem="AXM-6Q-YP0" firstAttribute="centerX" secondItem="mKM-RV-vpF" secondAttribute="centerX" id="w1Q-ap-QoI"/>
                         </constraints>
                     </view>
@@ -76,4 +85,7 @@
             <point key="canvasLocation" x="140" y="137.18140929535232"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="profile" width="90" height="90"/>
+    </resources>
 </document>
