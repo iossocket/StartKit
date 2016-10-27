@@ -29,6 +29,7 @@
 		D064D3D31DBE0DE200A46088 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D064D3D21DBE0DE200A46088 /* Login.storyboard */; };
 		D064D3D51DBE11EE00A46088 /* RepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D3D41DBE11EE00A46088 /* RepoViewController.swift */; };
 		D064D3D71DBE12BC00A46088 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D3D61DBE12BC00A46088 /* MeViewController.swift */; };
+		D064D3E41DC19C6E00A46088 /* UserInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D3E31DC19C6E00A46088 /* UserInfoService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		D064D3D21DBE0DE200A46088 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		D064D3D41DBE11EE00A46088 /* RepoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoViewController.swift; sourceTree = "<group>"; };
 		D064D3D61DBE12BC00A46088 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		D064D3E31DC19C6E00A46088 /* UserInfoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				D064D3681DB3B83500A46088 /* UserAPIManager.swift */,
+				D064D3E31DC19C6E00A46088 /* UserInfoService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				D064D38E1DB846E400A46088 /* SecretStoreProtocol.swift in Sources */,
 				D0315D571D9604980058DC64 /* AppDelegate.swift in Sources */,
 				D064D3661DB3A88500A46088 /* APIProtocol.swift in Sources */,
+				D064D3E41DC19C6E00A46088 /* UserInfoService.swift in Sources */,
 				D064D3691DB3B83500A46088 /* UserAPIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

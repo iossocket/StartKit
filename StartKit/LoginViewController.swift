@@ -11,6 +11,7 @@ import SVProgressHUD
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -19,27 +20,42 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginAction(_ sender: AnyObject) {
+        if isEmptyInput() {
+            SVProgressHUD.showError(withStatus: "User name and password can not be empty")
+            return
+        }
         SVProgressHUD.show()
-        UserAPIManager().login(userName: userNameTextField.text!, password: passwordTextField.text!, handler: { result in
+        UserAPIManager().login(userName: userNameTextField.text!, password: passwordTextField.text!, handler: { [weak self] result in
             switch result {
             case .success(let token):
                 KeychainSecretStore().saveToken(token: token)
-                SVProgressHUD.dismiss()
+                self?.getUserInfo()
             case .failure(let error):
                 SVProgressHUD.showError(withStatus: error.localizedDescription)
             }
         })
     }
     
+    private func isEmptyInput() -> Bool {
+        if userNameTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
+            return true
+        }
+        return false
+    }
+    
     func getUserInfo() {
         guard let token = KeychainSecretStore().getToken() else { return }
-        UserAPIManager().profile(token: token) { result in
+        UserAPIManager().profile(token: token) { [weak self] result in
             switch result {
             case .success(let user):
-                print(user.name)
-                print(user.avatarUrl)
+                if UserInfoService().saveUserInof(user: user) {
+                    self?.dismiss(animated: true, completion: nil)
+                    SVProgressHUD.dismiss()
+                } else {
+                    SVProgressHUD.showError(withStatus: "Get user info failed!")
+                }
             case .failure(let error):
-                print(error.localizedDescription)
+                SVProgressHUD.showError(withStatus: error.localizedDescription)
             }
         }
     }

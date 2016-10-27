@@ -14,6 +14,11 @@ class User: Mappable {
     var avatarUrl: String?
     var name: String?
     
+    init(name: String, avatarUrl: String) {
+        self.name = name
+        self.avatarUrl = avatarUrl
+    }
+    
     required init?(map: Map) {
         if map.JSON["name"] == nil || map.JSON["avatar_url"] == nil {
             return nil
