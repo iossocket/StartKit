@@ -30,6 +30,8 @@
 		D064D3D51DBE11EE00A46088 /* RepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D3D41DBE11EE00A46088 /* RepoViewController.swift */; };
 		D064D3D71DBE12BC00A46088 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D3D61DBE12BC00A46088 /* MeViewController.swift */; };
 		D064D3E41DC19C6E00A46088 /* UserInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D3E31DC19C6E00A46088 /* UserInfoService.swift */; };
+		D064D3E61DC1C03800A46088 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D3E51DC1C03800A46088 /* LoginViewModel.swift */; };
+		D064D3E91DC1E6FE00A46088 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D3E81DC1E6FE00A46088 /* UIImage+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		D064D3D41DBE11EE00A46088 /* RepoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoViewController.swift; sourceTree = "<group>"; };
 		D064D3D61DBE12BC00A46088 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		D064D3E31DC19C6E00A46088 /* UserInfoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoService.swift; sourceTree = "<group>"; };
+		D064D3E51DC1C03800A46088 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		D064D3E81DC1E6FE00A46088 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +229,7 @@
 		D064D3D81DBE2F8F00A46088 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				D064D3E71DC1E6E100A46088 /* Extension */,
 				D064D3671DB3B7CE00A46088 /* Service */,
 				D064D3621DB3A66000A46088 /* Config */,
 				D0315D561D9604980058DC64 /* AppDelegate.swift */,
@@ -256,6 +261,7 @@
 				D064D36A1DB4571300A46088 /* Model */,
 				D064D3D21DBE0DE200A46088 /* Login.storyboard */,
 				D0315D581D9604980058DC64 /* LoginViewController.swift */,
+				D064D3E51DC1C03800A46088 /* LoginViewModel.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -267,6 +273,14 @@
 				D064D3E31DC19C6E00A46088 /* UserInfoService.swift */,
 			);
 			name = Service;
+			sourceTree = "<group>";
+		};
+		D064D3E71DC1E6E100A46088 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D064D3E81DC1E6FE00A46088 /* UIImage+Extension.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,6 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D064D3E91DC1E6FE00A46088 /* UIImage+Extension.swift in Sources */,
 				D064D3D71DBE12BC00A46088 /* MeViewController.swift in Sources */,
 				D0315D591D9604980058DC64 /* LoginViewController.swift in Sources */,
 				D064D3641DB3A86600A46088 /* BaseAPIManager.swift in Sources */,
@@ -441,6 +456,7 @@
 				D064D3901DB8475D00A46088 /* KeychainSecretStore.swift in Sources */,
 				D064D38E1DB846E400A46088 /* SecretStoreProtocol.swift in Sources */,
 				D0315D571D9604980058DC64 /* AppDelegate.swift in Sources */,
+				D064D3E61DC1C03800A46088 /* LoginViewModel.swift in Sources */,
 				D064D3661DB3A88500A46088 /* APIProtocol.swift in Sources */,
 				D064D3E41DC19C6E00A46088 /* UserInfoService.swift in Sources */,
 				D064D3691DB3B83500A46088 /* UserAPIManager.swift in Sources */,

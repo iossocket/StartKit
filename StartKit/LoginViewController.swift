@@ -8,6 +8,7 @@
 
 import UIKit
 import SVProgressHUD
+import Kingfisher
 
 class LoginViewController: UIViewController {
 
@@ -15,8 +16,13 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    var viewModel: LoginViewModel!
+    let userApiManager: UserAPIManager = UserAPIManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = LoginViewModel(userInfo: UserInfoService(), keychainService: KeychainSecretStore())
+        setPreviousInfo()
     }
     
     @IBAction func loginAction(_ sender: AnyObject) {
@@ -24,33 +30,49 @@ class LoginViewController: UIViewController {
             SVProgressHUD.showError(withStatus: "User name and password can not be empty")
             return
         }
+        loginAction()
+    }
+    
+    private func setPreviousInfo() {
+        guard let info = viewModel.getUserInfo() else {
+            return
+        }
+        
+        userNameTextField.text = info.name
+        avatarImageView.kf.setImage(with: URL(string: info.avatarUrl),
+                                    placeholder: UIImage.profileImage(),
+                                    options: [.transition(.fade(1))],
+                                    progressBlock: nil, completionHandler: nil)
+    }
+    
+    private func isEmptyInput() -> Bool {
+        return viewModel.isUserNameOrPasswordEmpty(userName: userNameTextField.text!, password: passwordTextField.text!)
+    }
+    
+    private func loginAction() {
         SVProgressHUD.show()
-        UserAPIManager().login(userName: userNameTextField.text!, password: passwordTextField.text!, handler: { [weak self] result in
+        userApiManager.login(userName: userNameTextField.text!, password: passwordTextField.text!, handler: { [weak self] result in
             switch result {
             case .success(let token):
-                KeychainSecretStore().saveToken(token: token)
-                self?.getUserInfo()
+                self?.getUserInfo(token)
             case .failure(let error):
                 SVProgressHUD.showError(withStatus: error.localizedDescription)
             }
         })
     }
     
-    private func isEmptyInput() -> Bool {
-        if userNameTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
-            return true
-        }
-        return false
-    }
-    
-    func getUserInfo() {
-        guard let token = KeychainSecretStore().getToken() else { return }
-        UserAPIManager().profile(token: token) { [weak self] result in
+    private func getUserInfo(_ token: String) {
+        userApiManager.profile(token: token) { [weak self] result in
+            guard let strongSelf = self else {
+                SVProgressHUD.showError(withStatus: "Fatal error")
+                return
+            }
+            
             switch result {
             case .success(let user):
-                if UserInfoService().saveUserInof(user: user) {
-                    self?.dismiss(animated: true, completion: nil)
+                if strongSelf.viewModel.saveUserInfoAndToken(user: user, token: token) {
                     SVProgressHUD.dismiss()
+                    strongSelf.dismiss(animated: true, completion: nil)
                 } else {
                     SVProgressHUD.showError(withStatus: "Get user info failed!")
                 }

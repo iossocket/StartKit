@@ -10,7 +10,7 @@ import UIKit
 
 protocol UserInfoProtocol {
     func getUserInfo() -> User?
-    func saveUserInof(user: User) -> Bool
+    func saveUserInfo(user: User) -> Bool
 }
 
 class UserInfoService: UserInfoProtocol {
@@ -26,7 +26,7 @@ class UserInfoService: UserInfoProtocol {
         return User(name: name, avatarUrl: avatarUrl)
     }
     
-    func saveUserInof(user: User) -> Bool {
+    func saveUserInfo(user: User) -> Bool {
         let userDefaults = UserDefaults()
         guard let name = user.name, let avatarUrl = user.avatarUrl else {
             return false

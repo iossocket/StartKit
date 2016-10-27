@@ -55,7 +55,17 @@
                                     <action selector="loginAction:" destination="dxl-BY-2gl" eventType="touchUpInside" id="TfF-ot-kSh"/>
                                 </connections>
                             </button>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="jCn-Oz-9rB"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="jCn-Oz-9rB">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="VJj-uC-4em"/>
+                                    <constraint firstAttribute="height" constant="90" id="igt-Lb-Vyb"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="45"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.24705882352941178" green="0.31764705882352939" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
