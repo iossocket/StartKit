@@ -36,6 +36,8 @@
 		D064D3F71DC2D75E00A46088 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D064D3F31DC2D74500A46088 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D064D3F81DC2D75E00A46088 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D064D3F41DC2D74500A46088 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D064D3FB1DC2D7ED00A46088 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D3FA1DC2D7ED00A46088 /* LoginViewModelTests.swift */; };
+		D064D40A1DC30E9100A46088 /* RepoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D4091DC30E9100A46088 /* RepoAPIManager.swift */; };
+		D064D40D1DC3112200A46088 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D40C1DC3112200A46088 /* Repo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +106,8 @@
 		D064D3F31DC2D74500A46088 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		D064D3F41DC2D74500A46088 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		D064D3FA1DC2D7ED00A46088 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		D064D4091DC30E9100A46088 /* RepoAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoAPIManager.swift; sourceTree = "<group>"; };
+		D064D40C1DC3112200A46088 /* Repo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +269,8 @@
 		D064D3D91DBE2FA000A46088 /* Repo */ = {
 			isa = PBXGroup;
 			children = (
+				D064D40B1DC3111700A46088 /* Model */,
+				D064D4081DC30E7B00A46088 /* Service */,
 				D064D3D41DBE11EE00A46088 /* RepoViewController.swift */,
 			);
 			name = Repo;
@@ -313,6 +319,22 @@
 				D064D3FA1DC2D7ED00A46088 /* LoginViewModelTests.swift */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		D064D4081DC30E7B00A46088 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D064D4091DC30E9100A46088 /* RepoAPIManager.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		D064D40B1DC3111700A46088 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D064D40C1DC3112200A46088 /* Repo.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,9 +510,11 @@
 				D064D36C1DB4572100A46088 /* User.swift in Sources */,
 				D064D3901DB8475D00A46088 /* KeychainSecretStore.swift in Sources */,
 				D064D38E1DB846E400A46088 /* SecretStoreProtocol.swift in Sources */,
+				D064D40A1DC30E9100A46088 /* RepoAPIManager.swift in Sources */,
 				D0315D571D9604980058DC64 /* AppDelegate.swift in Sources */,
 				D064D3E61DC1C03800A46088 /* LoginViewModel.swift in Sources */,
 				D064D3661DB3A88500A46088 /* APIProtocol.swift in Sources */,
+				D064D40D1DC3112200A46088 /* Repo.swift in Sources */,
 				D064D3E41DC19C6E00A46088 /* UserInfoService.swift in Sources */,
 				D064D3691DB3B83500A46088 /* UserAPIManager.swift in Sources */,
 			);
