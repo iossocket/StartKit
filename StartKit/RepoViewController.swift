@@ -40,13 +40,17 @@ class RepoViewController: UIViewController {
         repoApiManager.fetchAllRepos(token: token) { [weak self] result in
             switch (result) {
             case RepoResult.success(let repos):
-                self?.viewModel.setRepos(repos)
-                self?.repoTableView.reloadData()
+                self?.updateRepoList(repos: repos)
                 SVProgressHUD.dismiss()
             case RepoResult.failure:
                 SVProgressHUD.showError(withStatus: "Fetch repo failed")
             }
         }
+    }
+    
+    private func updateRepoList(repos: Array<Repo>) {
+        viewModel.setRepos(repos)
+        repoTableView.reloadData()
     }
 }
 
