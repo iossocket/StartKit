@@ -11,6 +11,7 @@ import UIKit
 protocol UserInfoProtocol {
     func getUserInfo() -> User?
     func saveUserInfo(user: User) -> Bool
+    func removeUserInfo()
 }
 
 class UserInfoService: UserInfoProtocol {
@@ -34,5 +35,12 @@ class UserInfoService: UserInfoProtocol {
         userDefaults.set(name, forKey: NAME)
         userDefaults.set(avatarUrl, forKey: URL)
         return userDefaults.synchronize()
+    }
+    
+    func removeUserInfo() {
+        let userDefaults = UserDefaults()
+        userDefaults.removeObject(forKey: NAME)
+        userDefaults.removeObject(forKey: URL)
+        userDefaults.synchronize()
     }
 }
