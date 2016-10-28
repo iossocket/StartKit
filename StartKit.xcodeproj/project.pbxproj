@@ -32,6 +32,10 @@
 		D064D3E41DC19C6E00A46088 /* UserInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D3E31DC19C6E00A46088 /* UserInfoService.swift */; };
 		D064D3E61DC1C03800A46088 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D3E51DC1C03800A46088 /* LoginViewModel.swift */; };
 		D064D3E91DC1E6FE00A46088 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D3E81DC1E6FE00A46088 /* UIImage+Extension.swift */; };
+		D064D3F51DC2D74500A46088 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D064D3F31DC2D74500A46088 /* Nimble.framework */; };
+		D064D3F61DC2D74500A46088 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D064D3F41DC2D74500A46088 /* Quick.framework */; };
+		D064D3F71DC2D75E00A46088 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D064D3F31DC2D74500A46088 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D064D3F81DC2D75E00A46088 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D064D3F41DC2D74500A46088 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +54,20 @@
 			remoteInfo = StartKit;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D064D3EE1DC2D51600A46088 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D064D3F71DC2D75E00A46088 /* Nimble.framework in CopyFiles */,
+				D064D3F81DC2D75E00A46088 /* Quick.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D00D63671D962E330068C6FF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -84,6 +102,8 @@
 		D064D3E31DC19C6E00A46088 /* UserInfoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoService.swift; sourceTree = "<group>"; };
 		D064D3E51DC1C03800A46088 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		D064D3E81DC1E6FE00A46088 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		D064D3F31DC2D74500A46088 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		D064D3F41DC2D74500A46088 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +124,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D064D3F51DC2D74500A46088 /* Nimble.framework in Frameworks */,
+				D064D3F61DC2D74500A46088 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +142,8 @@
 		D00D63661D962E330068C6FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D064D3F31DC2D74500A46088 /* Nimble.framework */,
+				D064D3F41DC2D74500A46088 /* Quick.framework */,
 				D064D3891DB8460300A46088 /* KeychainAccess.framework */,
 				D00D63671D962E330068C6FF /* Alamofire.framework */,
 				D00D63681D962E330068C6FF /* Kingfisher.framework */,
@@ -311,6 +335,7 @@
 				D0315D631D9604980058DC64 /* Sources */,
 				D0315D641D9604980058DC64 /* Frameworks */,
 				D0315D651D9604980058DC64 /* Resources */,
+				D064D3EE1DC2D51600A46088 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -657,6 +682,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = StartKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtworks.StartKitTests;
@@ -671,6 +700,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = StartKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtworks.StartKitTests;
