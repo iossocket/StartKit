@@ -11,10 +11,13 @@ import SVProgressHUD
 
 class RepoViewController: UIViewController {
     
+    @IBOutlet weak var repoTableView: UITableView!
     let repoApiManager = RepoAPIManager()
+    let viewModel = RepoViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        repoTableView.dataSource = viewModel
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -34,10 +37,11 @@ class RepoViewController: UIViewController {
     
     private func fetchRepos(token: String) {
         SVProgressHUD.show()
-        repoApiManager.fetchAllRepos(token: token) { result in
+        repoApiManager.fetchAllRepos(token: token) { [weak self] result in
             switch (result) {
             case RepoResult.success(let repos):
-                print(repos)
+                self?.viewModel.setRepos(repos)
+                self?.repoTableView.reloadData()
                 SVProgressHUD.dismiss()
             case RepoResult.failure:
                 SVProgressHUD.showError(withStatus: "Fetch repo failed")
@@ -45,3 +49,4 @@ class RepoViewController: UIViewController {
         }
     }
 }
+

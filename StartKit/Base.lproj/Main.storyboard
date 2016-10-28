@@ -8,7 +8,7 @@
         <!--Repo-->
         <scene sceneID="kTk-hj-WHP">
             <objects>
-                <viewController id="yu6-O9-3m6" customClass="RepoViewController" customModule="StartKit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="yu6-O9-3m6" customClass="RepoViewController" customModule="StartKit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Uim-WN-gZv"/>
                         <viewControllerLayoutGuide type="bottom" id="uZR-5m-uBt"/>
@@ -16,9 +16,33 @@
                     <view key="view" contentMode="scaleToFill" id="S8C-CJ-nSS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GsX-f6-AQa">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RepoCell" id="5kH-Q2-w1s">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5kH-Q2-w1s" id="ahK-TL-l0r">
+                                            <frame key="frameInset" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GsX-f6-AQa" firstAttribute="top" secondItem="Uim-WN-gZv" secondAttribute="bottom" id="90Y-ys-D2g"/>
+                            <constraint firstItem="uZR-5m-uBt" firstAttribute="top" secondItem="GsX-f6-AQa" secondAttribute="bottom" id="Obb-KJ-lGv"/>
+                            <constraint firstAttribute="trailing" secondItem="GsX-f6-AQa" secondAttribute="trailing" id="VHW-eD-Bnj"/>
+                            <constraint firstItem="GsX-f6-AQa" firstAttribute="leading" secondItem="S8C-CJ-nSS" secondAttribute="leading" id="dmF-th-UqP"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Repo" id="Nqj-1V-8Kf"/>
+                    <connections>
+                        <outlet property="repoTableView" destination="GsX-f6-AQa" id="RBq-To-RBT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRh-wp-okD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -30,6 +54,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Gi6-ci-OWh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="6oU-6b-age">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -102,6 +127,6 @@
     </scenes>
     <resources>
         <image name="repo" width="20" height="20"/>
-        <image name="user" width="20" height="20"/>
+        <image name="user" width="24" height="24"/>
     </resources>
 </document>

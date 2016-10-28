@@ -38,6 +38,7 @@
 		D064D3FB1DC2D7ED00A46088 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D3FA1DC2D7ED00A46088 /* LoginViewModelTests.swift */; };
 		D064D40A1DC30E9100A46088 /* RepoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D4091DC30E9100A46088 /* RepoAPIManager.swift */; };
 		D064D40D1DC3112200A46088 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D40C1DC3112200A46088 /* Repo.swift */; };
+		D064D40F1DC32CFB00A46088 /* RepoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D40E1DC32CFB00A46088 /* RepoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		D064D3FA1DC2D7ED00A46088 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		D064D4091DC30E9100A46088 /* RepoAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoAPIManager.swift; sourceTree = "<group>"; };
 		D064D40C1DC3112200A46088 /* Repo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
+		D064D40E1DC32CFB00A46088 /* RepoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +274,7 @@
 				D064D40B1DC3111700A46088 /* Model */,
 				D064D4081DC30E7B00A46088 /* Service */,
 				D064D3D41DBE11EE00A46088 /* RepoViewController.swift */,
+				D064D40E1DC32CFB00A46088 /* RepoViewModel.swift */,
 			);
 			name = Repo;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D064D40F1DC32CFB00A46088 /* RepoViewModel.swift in Sources */,
 				D064D3E91DC1E6FE00A46088 /* UIImage+Extension.swift in Sources */,
 				D064D3D71DBE12BC00A46088 /* MeViewController.swift in Sources */,
 				D0315D591D9604980058DC64 /* LoginViewController.swift in Sources */,
