@@ -12,8 +12,8 @@ import SVProgressHUD
 class RepoViewController: UIViewController {
     
     @IBOutlet weak var repoTableView: UITableView!
-    let repoApiManager = RepoAPIManager()
-    let viewModel = RepoViewModel()
+    private let repoApiManager = RepoAPIManager()
+    private let viewModel = RepoViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
