@@ -35,11 +35,11 @@ struct LoginViewModel {
         return false
     }
     
-    func saveUserInfoAndToken(user: User, token: String) -> Bool {
+    func saveUserInfoAndLoginResult(user: User, loginResult: (token: String, id: String)) -> Bool {
         if !userInfo.saveUserInfo(user: user) {
             return false
         }
-        keychainService.saveToken(token: token)
+        keychainService.saveLoginResult(loginResult)
         return true
     }
 }

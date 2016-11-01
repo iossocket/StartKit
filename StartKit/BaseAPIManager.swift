@@ -29,6 +29,8 @@ class BaseAPIManager: APIProtocol {
             return HTTPMethod.get
         case .post:
             return HTTPMethod.post
+        case .delete:
+            return HTTPMethod.delete
         }
     }
     
@@ -36,6 +38,8 @@ class BaseAPIManager: APIProtocol {
         switch encoding {
         case .json:
             return JSONEncoding.default
+        case .url:
+            return URLEncoding.default
         }
     }
 }

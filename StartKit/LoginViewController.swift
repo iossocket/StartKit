@@ -53,16 +53,16 @@ class LoginViewController: UIViewController {
         SVProgressHUD.show()
         userApiManager.login(userName: userNameTextField.text!, password: passwordTextField.text!, handler: { [weak self] result in
             switch result {
-            case .success(let token):
-                self?.getUserInfo(token)
+            case .success(let result):
+                self?.getUserInfo(result)
             case .failure(let error):
                 SVProgressHUD.showError(withStatus: error.localizedDescription)
             }
         })
     }
     
-    private func getUserInfo(_ token: String) {
-        userApiManager.profile(token: token) { [weak self] result in
+    private func getUserInfo(_ loginResult: (token: String, id: String)) {
+        userApiManager.profile(token: loginResult.token) { [weak self] result in
             guard let strongSelf = self else {
                 SVProgressHUD.showError(withStatus: "Fatal error")
                 return
@@ -70,7 +70,7 @@ class LoginViewController: UIViewController {
             
             switch result {
             case .success(let user):
-                if strongSelf.viewModel.saveUserInfoAndToken(user: user, token: token) {
+                if strongSelf.viewModel.saveUserInfoAndLoginResult(user: user, loginResult: loginResult) {
                     SVProgressHUD.dismiss()
                     strongSelf.dismiss(animated: true, completion: nil)
                 } else {

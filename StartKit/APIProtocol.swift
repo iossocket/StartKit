@@ -11,10 +11,12 @@ import Foundation
 enum RequestMethod {
     case get
     case post
+    case delete
 }
 
 enum RequestEncoding {
     case json
+    case url
 }
 
 protocol APIProtocol {

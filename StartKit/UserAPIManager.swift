@@ -27,20 +27,34 @@ class UserAPIManager {
         self.baseApiManager = baseApiManager
     }
     
-    func login(userName: String, password: String, handler: @escaping (UserResult<String>) -> Void) {
+    func login(userName: String, password: String, handler: @escaping (UserResult<(token: String, id: String)>) -> Void) {
         let credentialData = "\(userName):\(password)".data(using: String.Encoding.utf8)!
         let base64Credentials = credentialData.base64EncodedString()
         let headers = ["Authorization": "Basic \(base64Credentials)"]
         let params: Dictionary<String, Any> = ["scopes": ["repo", "user"], "note": "GitHubDemo"]
         baseApiManager.request(BASEURL + "/authorizations", method: .post, encoding: .json, params: params, headers: headers, success: { result in
             print(result)
-            guard let dict = result as? Dictionary<String, Any>, let token = dict["token"] as? String else {
+            guard let dict = result as? Dictionary<String, Any>,
+                  let token = dict["token"] as? String,
+                  let id = dict["id"] as? Int else {
                 handler(.failure(error: .loginFailed))
                 return
             }
-            handler(.success(value: token))
+            handler(.success(value: (token, "\(id)")))
         }) { error in
             handler(.failure(error: .loginFailed))
+        }
+    }
+    
+    func logout(userName: String, password: String, handler: @escaping () -> Void) {
+        let credentialData = "\(userName):\(password)".data(using: String.Encoding.utf8)!
+        let base64Credentials = credentialData.base64EncodedString()
+        let headers = ["Authorization": "Basic \(base64Credentials)"]
+        let params: Dictionary<String, Any> = ["scopes": ["repo", "user"], "note": "GitHubDemo"]
+        baseApiManager.request(BASEURL + "/authorizations", method: .delete, encoding: .url, params: params, headers: headers, success: { result in
+            handler()
+        }) { error in
+            handler()
         }
     }
     

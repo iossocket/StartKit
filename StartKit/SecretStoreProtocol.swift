@@ -9,7 +9,8 @@
 import Foundation
 
 protocol SecretStoreProtocol {
-    func saveToken(token: String)
+    func saveLoginResult(_ loginResult: (token: String, id: String))
     func getToken() -> String?
-    func emptyToken()
+    func getId() -> String?
+    func emptyLoginResult()
 }
