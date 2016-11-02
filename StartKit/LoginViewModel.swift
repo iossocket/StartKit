@@ -42,4 +42,15 @@ struct LoginViewModel {
         keychainService.saveLoginResult(loginResult)
         return true
     }
+    
+    func getTokenAndId() -> (token: String, id: String)? {
+        guard let id = keychainService.getId(), let token = keychainService.getToken() else {
+            return nil
+        }
+        return (token, id)
+    }
+    
+    func emptyToken() {
+        keychainService.emptyLoginResult()
+    }
 }

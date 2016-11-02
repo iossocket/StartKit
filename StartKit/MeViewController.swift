@@ -11,7 +11,13 @@ import UIKit
 class MeViewController: UIViewController {
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
+        super.viewDidLoad() 
+    }
+    
+    @IBAction func logout(_ sender: AnyObject) {
+        let loginVC = UIStoryboard(name: "Login", bundle: nil)
+            .instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        loginVC.isLogin = false
+        self.present(loginVC, animated: true, completion: nil)
     }
 }

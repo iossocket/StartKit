@@ -11,6 +11,7 @@ import ObjectMapper
 
 enum UserApiError: Error {
     case loginFailed
+    case logoutFailed
     case profileFailed
 }
 
@@ -46,21 +47,20 @@ class UserAPIManager {
         }
     }
     
-    func logout(userName: String, password: String, handler: @escaping () -> Void) {
+    func logout(userName: String, password: String, id: String, handler: @escaping (UserResult<Void>) -> Void) {
         let credentialData = "\(userName):\(password)".data(using: String.Encoding.utf8)!
         let base64Credentials = credentialData.base64EncodedString()
         let headers = ["Authorization": "Basic \(base64Credentials)"]
-        let params: Dictionary<String, Any> = ["scopes": ["repo", "user"], "note": "GitHubDemo"]
-        baseApiManager.request(BASEURL + "/authorizations", method: .delete, encoding: .url, params: params, headers: headers, success: { result in
-            handler()
+        baseApiManager.request(BASEURL + "/authorizations/\(id)", method: .delete, encoding: .url, params: [:], headers: headers, success: { result in
+            handler(.success(value: ()))
         }) { error in
-            handler()
+            handler(.failure(error: .logoutFailed))
         }
     }
     
     func profile(token: String, handler: @escaping (UserResult<User>) -> Void) {
         let headers = ["Authorization": "token \(token)"]
-        baseApiManager.request(BASEURL + "/user", method: .get, encoding: .json, params: nil, headers: headers, success: { result in
+        baseApiManager.request(BASEURL + "/user", method: .get, encoding: .url, params: nil, headers: headers, success: { result in
             guard let user = Mapper<User>().map(JSONObject: result) else {
                 handler(.failure(error: .profileFailed))
                 return

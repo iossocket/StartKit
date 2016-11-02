@@ -12,9 +12,12 @@ import Kingfisher
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    var isLogin = true;
     
     var viewModel: LoginViewModel!
     let userApiManager: UserAPIManager = UserAPIManager()
@@ -23,6 +26,10 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         viewModel = LoginViewModel(userInfo: UserInfoService(), keychainService: KeychainSecretStore())
         setPreviousInfo()
+        
+        if !isLogin {
+            loginButton.setTitle("Logout", for: .normal)
+        }
     }
     
     @IBAction func loginAction(_ sender: AnyObject) {
@@ -30,7 +37,11 @@ class LoginViewController: UIViewController {
             SVProgressHUD.showError(withStatus: "User name and password can not be empty")
             return
         }
-        loginAction()
+        if isLogin {
+            loginAction()
+        } else {
+            logoutAction()
+        }
     }
     
     private func setPreviousInfo() {
@@ -57,6 +68,27 @@ class LoginViewController: UIViewController {
                 self?.getUserInfo(result)
             case .failure(let error):
                 SVProgressHUD.showError(withStatus: error.localizedDescription)
+            }
+        })
+    }
+    
+    private func logoutAction() {
+        guard let loginResult = viewModel.getTokenAndId() else {
+            SVProgressHUD.showError(withStatus: "Logout Failed")
+            return
+        }
+        
+        SVProgressHUD.show()
+        userApiManager.logout(userName: userNameTextField.text!, password: passwordTextField.text!, id: loginResult.id, handler: { [weak self] result in
+            switch result {
+            case .success:
+                self?.passwordTextField.text = ""
+                self?.viewModel.emptyToken()
+                self?.isLogin = true
+                self?.loginButton.setTitle("Login", for: .normal)
+                SVProgressHUD.showInfo(withStatus: "Logout Success")
+            case .failure:
+                SVProgressHUD.showError(withStatus: "Logout Failed")
             }
         })
     }

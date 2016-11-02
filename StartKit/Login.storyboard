@@ -87,6 +87,7 @@
                     </view>
                     <connections>
                         <outlet property="avatarImageView" destination="jCn-Oz-9rB" id="9lO-kw-rpF"/>
+                        <outlet property="loginButton" destination="AXM-6Q-YP0" id="R0s-jX-RRG"/>
                         <outlet property="passwordTextField" destination="jl3-He-RNJ" id="S0f-gm-rh0"/>
                         <outlet property="userNameTextField" destination="pps-ug-viE" id="WbE-ch-tLz"/>
                     </connections>

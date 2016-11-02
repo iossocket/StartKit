@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         (window?.rootViewController as? UITabBarController)?.tabBar.tintColor = UIColor.red
-        KeychainSecretStore().emptyToken()
+//        KeychainSecretStore().emptyLoginResult()
         return true
     }
 }

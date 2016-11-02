@@ -97,7 +97,19 @@
                     <view key="view" contentMode="scaleToFill" id="zIe-M7-aaC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUx-N0-cAo">
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logout:" destination="i8b-Wm-k8L" eventType="touchUpInside" id="Y2g-jR-Un9"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TUx-N0-cAo" firstAttribute="centerY" secondItem="zIe-M7-aaC" secondAttribute="centerY" id="Gcg-rz-A7d"/>
+                            <constraint firstItem="TUx-N0-cAo" firstAttribute="centerX" secondItem="zIe-M7-aaC" secondAttribute="centerX" id="g9D-L3-Hlu"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Me" id="gdh-Oe-GeR"/>
                 </viewController>
