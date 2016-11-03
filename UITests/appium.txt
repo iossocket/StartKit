@@ -1,0 +1,6 @@
+[caps]
+platformName = "iOS"
+app = "/Users/xlzhu/Documents/iOS_Project/StartKit/Build/StartKit.app"
+deviceName = "iPhone 6"
+platformVersion = "10.0"
+noReset = true
