@@ -46,4 +46,12 @@ class RepoAPIManager {
             handler(.failure(error: .fetchFailed))
         }
     }
+    
+    func fetchRepo(name: String, user: String, handler: @escaping (Any) -> Void) {
+        baseApiManager.request(BASEURL + "/repos/\(user)/\(name)", method: .get, encoding: .json, params: nil, headers: nil, success: { result in
+            print(result)
+        }) { error in
+            print(error)
+        }
+    }
 }

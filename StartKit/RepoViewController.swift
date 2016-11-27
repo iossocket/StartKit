@@ -12,12 +12,14 @@ import SVProgressHUD
 class RepoViewController: UIViewController {
     
     @IBOutlet weak var repoTableView: UITableView!
-    private let repoApiManager = RepoAPIManager()
-    private let viewModel = RepoViewModel()
+    fileprivate let repoApiManager = RepoAPIManager()
+    fileprivate let viewModel = RepoViewModel()
+    fileprivate let userInfo = UserInfoService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         repoTableView.dataSource = viewModel
+        repoTableView.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -51,6 +53,18 @@ class RepoViewController: UIViewController {
     private func updateRepoList(repos: Array<Repo>) {
         viewModel.setRepos(repos)
         repoTableView.reloadData()
+    }
+}
+
+extension RepoViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let repo = viewModel.getRepoBy(indexPath)
+        guard let user = userInfo.getUserInfo()?.name else {
+            return
+        }
+        repoApiManager.fetchRepo(name: repo.name!, user: user, handler: {
+            print($0)
+        })
     }
 }
 

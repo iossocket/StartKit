@@ -14,6 +14,10 @@ class RepoViewModel: NSObject {
     func setRepos(_ repos: Array<Repo>) {
         self.repos = repos
     }
+    
+    func getRepoBy(_ index: IndexPath) -> Repo {
+        return repos[index.row]
+    }
 }
 
 extension RepoViewModel: UITableViewDataSource {
