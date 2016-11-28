@@ -36,7 +36,7 @@ class DateTransform: TransformType {
         
         let timeFormatterUTC = DateFormatter()
         timeFormatterUTC.timeZone = TimeZone.current
-        timeFormatterUTC.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSX"
+        timeFormatterUTC.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZ"
         guard let date = timeFormatterUTC.date(from: dataString) else {
             return nil
         }

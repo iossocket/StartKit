@@ -11,6 +11,7 @@ import ObjectMapper
 
 enum RepoApiError: Error {
     case fetchFailed
+    case jsonError
 }
 
 enum RepoResult<T> {
@@ -47,11 +48,15 @@ class RepoAPIManager {
         }
     }
     
-    func fetchRepo(name: String, user: String, handler: @escaping (Any) -> Void) {
+    func fetchRepo(name: String, user: String, handler: @escaping (RepoResult<SpecificRepo>) -> Void) {
         baseApiManager.request(BASEURL + "/repos/\(user)/\(name)", method: .get, encoding: .json, params: nil, headers: nil, success: { result in
-            print(result)
+            guard let repo = Mapper<SpecificRepo>().map(JSONObject: result) else {
+                handler(.failure(error: .jsonError))
+                return
+            }
+            handler(.success(value: repo))
         }) { error in
-            print(error)
+            handler(.failure(error: .fetchFailed))
         }
     }
 }

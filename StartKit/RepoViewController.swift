@@ -14,7 +14,6 @@ class RepoViewController: UIViewController {
     @IBOutlet weak var repoTableView: UITableView!
     fileprivate let repoApiManager = RepoAPIManager()
     fileprivate let viewModel = RepoViewModel()
-    fileprivate let userInfo = UserInfoService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,12 +58,9 @@ class RepoViewController: UIViewController {
 extension RepoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let repo = viewModel.getRepoBy(indexPath)
-        guard let user = userInfo.getUserInfo()?.name else {
-            return
-        }
-        repoApiManager.fetchRepo(name: repo.name!, user: user, handler: {
-            print($0)
-        })
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SpecificRepoViewController") as! SpecificRepoViewController
+        vc.repoName = repo.name!
+        self.show(vc, sender: nil)
     }
 }
 

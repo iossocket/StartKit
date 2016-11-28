@@ -19,6 +19,7 @@
 		D0315D611D9604980058DC64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0315D5F1D9604980058DC64 /* LaunchScreen.storyboard */; };
 		D0315D771D9604980058DC64 /* StartKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0315D761D9604980058DC64 /* StartKitUITests.swift */; };
 		D0412BE51DEB0D8200E29DFE /* SpecificRepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0412BE41DEB0D8200E29DFE /* SpecificRepoViewController.swift */; };
+		D0412BE71DEBB05500E29DFE /* SpecificRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0412BE61DEBB05500E29DFE /* SpecificRepo.swift */; };
 		D064D3641DB3A86600A46088 /* BaseAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D3631DB3A86600A46088 /* BaseAPIManager.swift */; };
 		D064D3661DB3A88500A46088 /* APIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D3651DB3A88500A46088 /* APIProtocol.swift */; };
 		D064D3691DB3B83500A46088 /* UserAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D3681DB3B83500A46088 /* UserAPIManager.swift */; };
@@ -92,6 +93,7 @@
 		D0315D761D9604980058DC64 /* StartKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartKitUITests.swift; sourceTree = "<group>"; };
 		D0315D781D9604980058DC64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0412BE41DEB0D8200E29DFE /* SpecificRepoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificRepoViewController.swift; sourceTree = "<group>"; };
+		D0412BE61DEBB05500E29DFE /* SpecificRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificRepo.swift; sourceTree = "<group>"; };
 		D064D3631DB3A86600A46088 /* BaseAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPIManager.swift; sourceTree = "<group>"; };
 		D064D3651DB3A88500A46088 /* APIProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIProtocol.swift; sourceTree = "<group>"; };
 		D064D3681DB3B83500A46088 /* UserAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAPIManager.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				D064D40C1DC3112200A46088 /* Repo.swift */,
+				D0412BE61DEBB05500E29DFE /* SpecificRepo.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				D0412BE51DEB0D8200E29DFE /* SpecificRepoViewController.swift in Sources */,
 				D064D40F1DC32CFB00A46088 /* RepoViewModel.swift in Sources */,
 				D064D3E91DC1E6FE00A46088 /* UIImage+Extension.swift in Sources */,
+				D0412BE71DEBB05500E29DFE /* SpecificRepo.swift in Sources */,
 				D064D3D71DBE12BC00A46088 /* MeViewController.swift in Sources */,
 				D0315D591D9604980058DC64 /* LoginViewController.swift in Sources */,
 				D064D3641DB3A86600A46088 /* BaseAPIManager.swift in Sources */,
