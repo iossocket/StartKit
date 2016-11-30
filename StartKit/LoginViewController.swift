@@ -102,6 +102,7 @@ class LoginViewController: UIViewController {
             
             switch result {
             case .success(let user):
+                user.name = strongSelf.userNameTextField.text ?? ""
                 if strongSelf.viewModel.saveUserInfoAndLoginResult(user: user, loginResult: loginResult) {
                     SVProgressHUD.dismiss()
                     strongSelf.dismiss(animated: true, completion: nil)
