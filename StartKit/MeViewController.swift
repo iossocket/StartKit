@@ -17,7 +17,7 @@ class MeViewController: UIViewController {
     @IBAction func logout(_ sender: AnyObject) {
         let loginVC = UIStoryboard(name: "Login", bundle: nil)
             .instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        loginVC.isLogin = false
+        loginVC.status = .logout
         self.present(loginVC, animated: true, completion: nil)
     }
 }

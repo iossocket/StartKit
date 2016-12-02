@@ -10,6 +10,29 @@ import UIKit
 import SVProgressHUD
 import Kingfisher
 
+enum Status {
+    case login
+    case logout
+    
+    func btnTitle() -> String {
+        switch self {
+        case .login:
+            return "Login"
+        case .logout:
+            return "Logout"
+        }
+    }
+    
+    func btnAction(vc: LoginViewController) {
+        switch self {
+        case .login:
+            vc.loginAction()
+        case .logout:
+            vc.logoutAction()
+        }
+    }
+}
+
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
@@ -17,7 +40,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    var isLogin = true;
+    var status: Status = .login
     
     var viewModel: LoginViewModel!
     let userApiManager: UserAPIManager = UserAPIManager()
@@ -26,10 +49,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         viewModel = LoginViewModel(userInfo: UserInfoService(), keychainService: KeychainSecretStore())
         setPreviousInfo()
-        
-        if !isLogin {
-            loginButton.setTitle("Logout", for: .normal)
-        }
+        loginButton.setTitle(status.btnTitle(), for: .normal)
     }
     
     @IBAction func loginAction(_ sender: AnyObject) {
@@ -37,11 +57,7 @@ class LoginViewController: UIViewController {
             SVProgressHUD.showError(withStatus: "User name and password can not be empty")
             return
         }
-        if isLogin {
-            loginAction()
-        } else {
-            logoutAction()
-        }
+        status.btnAction(vc: self)
     }
     
     private func setPreviousInfo() {
@@ -60,7 +76,7 @@ class LoginViewController: UIViewController {
         return viewModel.isUserNameOrPasswordEmpty(userName: userNameTextField.text!, password: passwordTextField.text!)
     }
     
-    private func loginAction() {
+    func loginAction() {
         SVProgressHUD.show()
         userApiManager.login(userName: userNameTextField.text!, password: passwordTextField.text!, handler: { [weak self] result in
             switch result {
@@ -72,7 +88,7 @@ class LoginViewController: UIViewController {
         })
     }
     
-    private func logoutAction() {
+    func logoutAction() {
         guard let loginResult = viewModel.getTokenAndId() else {
             SVProgressHUD.showError(withStatus: "Logout Failed")
             return
@@ -84,7 +100,7 @@ class LoginViewController: UIViewController {
             case .success:
                 self?.passwordTextField.text = ""
                 self?.viewModel.emptyToken()
-                self?.isLogin = true
+                self?.status = .login
                 self?.loginButton.setTitle("Login", for: .normal)
                 SVProgressHUD.showInfo(withStatus: "Logout Success")
             case .failure:
