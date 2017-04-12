@@ -4,6 +4,6 @@ node {
     }
 
     stage('Build') {
-        sh "fastlane beta"
+        sh "/Users/jetstar/.fastlane/bin/fastlane beta"
     }
 }
