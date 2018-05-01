@@ -15,11 +15,10 @@ platform :ios do
       clear_build_files
   end
 
-  desc "Update carthage"
-  lane :carthage_update do
-    carthage(
-      command: "update",
-      platform: "iOS"
+  desc "Update dependencies"
+  lane :cocoapods_update do
+    cocoapods(
+      clean: true,
     )
   end
 
