@@ -123,13 +123,13 @@ Reference: `Usage` - `Setup` at `https://github.com/fastlane/fastlane/tree/maste
 ## Other Recommendations
 
 ```
-- Code Structure: MVVM (VIPPER for complex data flow)
+- Code Structure: Clean Swift
 
-- Local database: Realm
+- Local database: CoreData
 
 - Data analysis:
 
-    - Mixpanel, Nielsen
+    - Fabric
 
     - Umen
 
@@ -152,8 +152,6 @@ Reference: `Usage` - `Setup` at `https://github.com/fastlane/fastlane/tree/maste
 
     - Network: Alamofire
 
-    - JSON-Model mapper: ObjectMapper
-
     - Spinning: SVProgressHUD
 
     - Image cache: Kingfisher
@@ -175,7 +173,5 @@ Reference: `Usage` - `Setup` at `https://github.com/fastlane/fastlane/tree/maste
     - Logging: XCGLogger
 
     - Data cache: Haneke
-
-    - JSON parse: SwiftyJSON
 ```
 
