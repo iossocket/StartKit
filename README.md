@@ -1,6 +1,6 @@
 # iOS StarterKit
 
-#### There is a demo in `demo` branch (WIP)
+#### There is a demo in `demo-clean` branch (WIP)
 
 ## iOS StarterKit Introduction
 This `iOS StarterKit` based on：
