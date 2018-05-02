@@ -10,6 +10,10 @@
 		0F94F6F453F8785F81D4FCA2 /* Pods_StartKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD967C48210F009CF8011DB4 /* Pods_StartKitTests.framework */; };
 		2057E9E1323FC3D2F83784C8 /* Pods_StartKitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B92F7CAC549C7D6E3C4A640 /* Pods_StartKitUITests.framework */; };
 		83700384D6955E5D01C1419A /* Pods_StartKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E097B8D6C304E6B7E836629 /* Pods_StartKit.framework */; };
+		D0214F002099A58200D51A4B /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0214EFF2099A58200D51A4B /* ParameterEncoding.swift */; };
+		D0214F022099A5B900D51A4B /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0214F012099A5B900D51A4B /* Request.swift */; };
+		D0214F042099A5DF00D51A4B /* RxClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0214F032099A5DF00D51A4B /* RxClient.swift */; };
+		D0214F0B2099A63B00D51A4B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D0214F092099A63B00D51A4B /* Reachability.m */; };
 		D0315D571D9604980058DC64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0315D561D9604980058DC64 /* AppDelegate.swift */; };
 		D0315D591D9604980058DC64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0315D581D9604980058DC64 /* ViewController.swift */; };
 		D0315D5C1D9604980058DC64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0315D5A1D9604980058DC64 /* Main.storyboard */; };
@@ -46,6 +50,12 @@
 		8EF741C4AB61026E66053368 /* Pods-StartKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-StartKit/Pods-StartKit.release.xcconfig"; sourceTree = "<group>"; };
 		A192D239AFBD393CB38FE8E6 /* Pods-StartKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StartKitTests/Pods-StartKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		BD967C48210F009CF8011DB4 /* Pods_StartKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StartKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0214EFF2099A58200D51A4B /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		D0214F012099A5B900D51A4B /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		D0214F032099A5DF00D51A4B /* RxClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxClient.swift; sourceTree = "<group>"; };
+		D0214F052099A60D00D51A4B /* StartKit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StartKit-Bridging-Header.h"; sourceTree = "<group>"; };
+		D0214F092099A63B00D51A4B /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		D0214F0A2099A63B00D51A4B /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		D0315D531D9604980058DC64 /* StartKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StartKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0315D561D9604980058DC64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0315D581D9604980058DC64 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +109,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D0214F0C2099A65B00D51A4B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D0214EFF2099A58200D51A4B /* ParameterEncoding.swift */,
+				D0214F012099A5B900D51A4B /* Request.swift */,
+				D0214F032099A5DF00D51A4B /* RxClient.swift */,
+				D0214F0A2099A63B00D51A4B /* Reachability.h */,
+				D0214F092099A63B00D51A4B /* Reachability.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		D0214F0D2099A67900D51A4B /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				D0315D5D1D9604980058DC64 /* Assets.xcassets */,
+				D0315D621D9604980058DC64 /* Info.plist */,
+				D0214F052099A60D00D51A4B /* StartKit-Bridging-Header.h */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
 		D0315D4A1D9604980058DC64 = {
 			isa = PBXGroup;
 			children = (
@@ -124,12 +156,12 @@
 		D0315D551D9604980058DC64 /* StartKit */ = {
 			isa = PBXGroup;
 			children = (
+				D0214F0D2099A67900D51A4B /* Config */,
+				D0214F0C2099A65B00D51A4B /* API */,
 				D0315D561D9604980058DC64 /* AppDelegate.swift */,
 				D0315D581D9604980058DC64 /* ViewController.swift */,
 				D0315D5A1D9604980058DC64 /* Main.storyboard */,
-				D0315D5D1D9604980058DC64 /* Assets.xcassets */,
 				D0315D5F1D9604980058DC64 /* LaunchScreen.storyboard */,
-				D0315D621D9604980058DC64 /* Info.plist */,
 			);
 			path = StartKit;
 			sourceTree = "<group>";
@@ -471,8 +503,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0214F002099A58200D51A4B /* ParameterEncoding.swift in Sources */,
+				D0214F022099A5B900D51A4B /* Request.swift in Sources */,
 				D0315D591D9604980058DC64 /* ViewController.swift in Sources */,
 				D0315D571D9604980058DC64 /* AppDelegate.swift in Sources */,
+				D0214F0B2099A63B00D51A4B /* Reachability.m in Sources */,
+				D0214F042099A5DF00D51A4B /* RxClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,6 +677,7 @@
 			baseConfigurationReference = 1481FCA75D2326518B9A9D85 /* Pods-StartKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEVELOPMENT_TEAM = QMP4D362DR;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -651,6 +688,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "$(sigh_com.thoughtworks.StartKit_adhoc)";
 				PROVISIONING_PROFILE_SPECIFIER = "$(sigh_com.thoughtworks.StartKit_adhoc)";
+				SWIFT_OBJC_BRIDGING_HEADER = "StartKit/StartKit-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -662,6 +701,7 @@
 			baseConfigurationReference = 8EF741C4AB61026E66053368 /* Pods-StartKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = QMP4D362DR;
@@ -673,6 +713,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "$(sigh_com.thoughtworks.StartKit_adhoc)";
 				PROVISIONING_PROFILE_SPECIFIER = "$(sigh_com.thoughtworks.StartKit_adhoc)";
+				SWIFT_OBJC_BRIDGING_HEADER = "StartKit/StartKit-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
