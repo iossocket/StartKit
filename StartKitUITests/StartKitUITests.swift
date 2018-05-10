@@ -9,17 +9,17 @@
 import XCTest
 
 class StartKitUITests: XCTestCase {
-
-    override func setUp() {
-        super.setUp()
-        continueAfterFailure = false
-        XCUIApplication().launch()
-    }
-
-    override func tearDown() {
-        super.tearDown()
-    }
-
-    func testExample() {
-    }
+  
+  override func setUp() {
+    super.setUp()
+    continueAfterFailure = false
+    XCUIApplication().launch()
+  }
+  
+  override func tearDown() {
+    super.tearDown()
+  }
+  
+  func testExample() {
+  }
 }

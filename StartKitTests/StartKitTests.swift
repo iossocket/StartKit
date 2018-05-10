@@ -10,21 +10,21 @@ import XCTest
 @testable import StartKit
 
 class StartKitTests: XCTestCase {
-
-    override func setUp() {
-        super.setUp()
+  
+  override func setUp() {
+    super.setUp()
+  }
+  
+  override func tearDown() {
+    super.tearDown()
+  }
+  
+  func testExample() {
+    
+  }
+  
+  func testPerformanceExample() {
+    self.measure {
     }
-
-    override func tearDown() {
-        super.tearDown()
-    }
-
-    func testExample() {
-
-    }
-
-    func testPerformanceExample() {
-        self.measure {
-        }
-    }
+  }
 }
