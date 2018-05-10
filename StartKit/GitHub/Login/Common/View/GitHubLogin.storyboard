@@ -43,7 +43,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1Y-w8-Vc6" userLabel="separator">
                                         <rect key="frame" x="10" y="50" width="365" height="1"/>
@@ -109,7 +109,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="didClickLoginButton:" destination="PZ4-M8-6JT" eventType="touchUpInside" id="1sL-Uv-4ey"/>
+                                    <action selector="didClickLoginButtonWithSender:" destination="PZ4-M8-6JT" eventType="touchUpInside" id="qfY-nG-aah"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zz3-au-6zb">
@@ -121,7 +121,7 @@
                                     <color key="titleColor" red="0.2267798325" green="0.56595995570000002" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="didClickOAuth2LoginButton:" destination="PZ4-M8-6JT" eventType="touchUpInside" id="OEH-Oc-2tH"/>
+                                    <action selector="didClickOAuth2LoginButtonWithSender:" destination="PZ4-M8-6JT" eventType="touchUpInside" id="Czl-aF-unI"/>
                                 </connections>
                             </button>
                         </subviews>
