@@ -13,6 +13,8 @@
 		7C63A4E020A4769C00DF5D47 /* GitHubLoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C63A4DF20A4769C00DF5D47 /* GitHubLoginInteractor.swift */; };
 		7C63A4E220A4772400DF5D47 /* GitHubLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C63A4E120A4772400DF5D47 /* GitHubLogin.storyboard */; };
 		7C63A4E520A486F700DF5D47 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C63A4E420A486F700DF5D47 /* UIView+Border.swift */; };
+		7CD22F4420A5B77700A809FC /* GitHubBasicLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD22F4320A5B77700A809FC /* GitHubBasicLoginRequest.swift */; };
+		7CD22F4720A5BFE300A809FC /* GitHubLoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD22F4620A5BFE300A809FC /* GitHubLoginPresenter.swift */; };
 		83700384D6955E5D01C1419A /* Pods_StartKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E097B8D6C304E6B7E836629 /* Pods_StartKit.framework */; };
 		D0214F002099A58200D51A4B /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0214EFF2099A58200D51A4B /* ParameterEncoding.swift */; };
 		D0214F022099A5B900D51A4B /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0214F012099A5B900D51A4B /* Request.swift */; };
@@ -55,6 +57,8 @@
 		7C63A4DF20A4769C00DF5D47 /* GitHubLoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubLoginInteractor.swift; sourceTree = "<group>"; };
 		7C63A4E120A4772400DF5D47 /* GitHubLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GitHubLogin.storyboard; sourceTree = "<group>"; };
 		7C63A4E420A486F700DF5D47 /* UIView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
+		7CD22F4320A5B77700A809FC /* GitHubBasicLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubBasicLoginRequest.swift; sourceTree = "<group>"; };
+		7CD22F4620A5BFE300A809FC /* GitHubLoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubLoginPresenter.swift; sourceTree = "<group>"; };
 		8EF741C4AB61026E66053368 /* Pods-StartKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-StartKit/Pods-StartKit.release.xcconfig"; sourceTree = "<group>"; };
 		A192D239AFBD393CB38FE8E6 /* Pods-StartKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StartKitTests/Pods-StartKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		BD967C48210F009CF8011DB4 /* Pods_StartKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StartKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +153,22 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		7CD22F4220A5B75D00A809FC /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				7CD22F4320A5B77700A809FC /* GitHubBasicLoginRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		7CD22F4520A5BFD500A809FC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				7CD22F4620A5BFE300A809FC /* GitHubLoginPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		D0214F0C2099A65B00D51A4B /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,18 +259,20 @@
 			isa = PBXGroup;
 			children = (
 				D2C0CEE2AB1BFA9856A3CF2D /* OAuth */,
-				D2C0CAA2E02FEB0D54DAB48A /* Common */,
+				D2C0CAA2E02FEB0D54DAB48A /* Basic */,
 			);
 			path = Login;
 			sourceTree = "<group>";
 		};
-		D2C0CAA2E02FEB0D54DAB48A /* Common */ = {
+		D2C0CAA2E02FEB0D54DAB48A /* Basic */ = {
 			isa = PBXGroup;
 			children = (
+				7CD22F4220A5B75D00A809FC /* Request */,
+				7CD22F4520A5BFD500A809FC /* Presenter */,
 				7C63A4DD20A46E1600DF5D47 /* Interactor */,
 				7C63A4D920A46BCA00DF5D47 /* View */,
 			);
-			path = Common;
+			path = Basic;
 			sourceTree = "<group>";
 		};
 		D2C0CEE2AB1BFA9856A3CF2D /* OAuth */ = {
@@ -582,9 +604,11 @@
 			files = (
 				D0214F002099A58200D51A4B /* ParameterEncoding.swift in Sources */,
 				D0214F022099A5B900D51A4B /* Request.swift in Sources */,
+				7CD22F4720A5BFE300A809FC /* GitHubLoginPresenter.swift in Sources */,
 				7C63A4E520A486F700DF5D47 /* UIView+Border.swift in Sources */,
 				D0315D591D9604980058DC64 /* ViewController.swift in Sources */,
 				7C63A4DB20A46BF500DF5D47 /* GitHubLoginViewController.swift in Sources */,
+				7CD22F4420A5B77700A809FC /* GitHubBasicLoginRequest.swift in Sources */,
 				D0315D571D9604980058DC64 /* AppDelegate.swift in Sources */,
 				7C63A4E020A4769C00DF5D47 /* GitHubLoginInteractor.swift in Sources */,
 				D0214F0B2099A63B00D51A4B /* Reachability.m in Sources */,
