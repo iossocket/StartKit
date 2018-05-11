@@ -18,7 +18,24 @@ struct GitHubBasicLoginRequest: Request {
   let encoding: ParameterEncoding? = .json
 }
 
+extension GitHubBasicLoginRequest {
+  init?(username: String, password: String) {
+    guard let encodedAuthentication = base64Encode(emailOrUsername: username, password: password) else {
+      return nil
+    }
+    
+    headers?["Authorization"] = "Basic \(encodedAuthentication)"
+  }
+  
+  private func base64Encode(emailOrUsername: String, password: String) -> String? {
+    let credentialsData = "\(emailOrUsername):\(password)".data(using: .utf8)
+    let base64Credentials = credentialsData?.base64EncodedString()
+    return base64Credentials
+  }
+}
+
 struct UserProfile: Decodable {
+  var id: Int
   var login: String
   var avatar_url: String
 }

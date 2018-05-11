@@ -25,10 +25,10 @@ class GitHubLoginInteractor: GitHubLoginInteractorProtocol {
   }
   
   func login(withEmailOrUsername emailOrUsername: String, password: String) {
-    guard let encodedAuthentication = base64Encode(emailOrUsername: emailOrUsername, password: password) else {
+    guard let request = GitHubBasicLoginRequest(username: emailOrUsername, password: password) else {
       return
     }
-    let request = GitHubBasicLoginRequest(headers: ["Authorization": "Basic \(encodedAuthentication)"])
+    
     client.send(request).observeOn(MainScheduler.instance)
       .subscribe(onNext: { response in
         
@@ -39,11 +39,5 @@ class GitHubLoginInteractor: GitHubLoginInteractorProtocol {
   
   func loginViaOAuth() {
     fatalError("GitHubLoginInteractorProtocol.LoginViaOAuth not implemented yet!")
-  }
-  
-  private func base64Encode(emailOrUsername: String, password: String) -> String? {
-    let credentialsData = "\(emailOrUsername):\(password)".data(using: .utf8)
-    let base64Credentials = credentialsData?.base64EncodedString()
-    return base64Credentials
   }
 }
