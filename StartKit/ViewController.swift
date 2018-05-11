@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+  let xxx: GitHubLoginInteractorProtocol = GitHubLoginInteractor(client: RxURLSessionClient(), presenter: GitHubLoginPresenter())
   
   override func viewDidLoad() {
     super.viewDidLoad()

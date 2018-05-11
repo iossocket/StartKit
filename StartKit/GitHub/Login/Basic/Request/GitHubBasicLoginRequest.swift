@@ -9,15 +9,16 @@
 import Foundation
 
 struct GitHubBasicLoginRequest: Request {
-  typealias Response = GitHubBasicLoginResponse
+  typealias Response = UserProfile
   
   let path: String = "/user"
-  let method: HTTPMethod = .get
+  let method: HTTPMethod = .post
   let parameter: [String : Any] = [:]
   var headers: [String : String]? = [:]
   let encoding: ParameterEncoding? = .json
 }
 
-struct GitHubBasicLoginResponse: Decodable  {
-  
+struct UserProfile: Decodable {
+  var login: String
+  var avatar_url: String
 }

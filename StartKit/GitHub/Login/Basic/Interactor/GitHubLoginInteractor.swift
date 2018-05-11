@@ -42,8 +42,8 @@ class GitHubLoginInteractor: GitHubLoginInteractorProtocol {
   }
   
   private func base64Encode(emailOrUsername: String, password: String) -> String? {
-    let data = "\(emailOrUsername):\(password))".data(using: .utf8)
-    let base64 = data?.base64EncodedString()
-    return base64
+    let credentialsData = "\(emailOrUsername):\(password)".data(using: .utf8)
+    let base64Credentials = credentialsData?.base64EncodedString()
+    return base64Credentials
   }
 }
