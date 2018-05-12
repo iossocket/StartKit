@@ -10,6 +10,7 @@
 		0F94F6F453F8785F81D4FCA2 /* Pods_StartKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD967C48210F009CF8011DB4 /* Pods_StartKitTests.framework */; };
 		2057E9E1323FC3D2F83784C8 /* Pods_StartKitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B92F7CAC549C7D6E3C4A640 /* Pods_StartKitUITests.framework */; };
 		7C5F9FC020A72C64009AFF5C /* GitHubLoginConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5F9FBF20A72C64009AFF5C /* GitHubLoginConfiguration.swift */; };
+		7C5F9FC320A73084009AFF5C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5F9FC220A73084009AFF5C /* HomeViewController.swift */; };
 		7C63A4DB20A46BF500DF5D47 /* GitHubLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C63A4DA20A46BF500DF5D47 /* GitHubLoginViewController.swift */; };
 		7C63A4E020A4769C00DF5D47 /* GitHubLoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C63A4DF20A4769C00DF5D47 /* GitHubLoginInteractor.swift */; };
 		7C63A4E220A4772400DF5D47 /* GitHubLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C63A4E120A4772400DF5D47 /* GitHubLogin.storyboard */; };
@@ -22,7 +23,7 @@
 		D0214F042099A5DF00D51A4B /* RxClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0214F032099A5DF00D51A4B /* RxClient.swift */; };
 		D0214F0B2099A63B00D51A4B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D0214F092099A63B00D51A4B /* Reachability.m */; };
 		D0315D571D9604980058DC64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0315D561D9604980058DC64 /* AppDelegate.swift */; };
-		D0315D591D9604980058DC64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0315D581D9604980058DC64 /* ViewController.swift */; };
+		D0315D591D9604980058DC64 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0315D581D9604980058DC64 /* ContainerViewController.swift */; };
 		D0315D5C1D9604980058DC64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0315D5A1D9604980058DC64 /* Main.storyboard */; };
 		D0315D5E1D9604980058DC64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0315D5D1D9604980058DC64 /* Assets.xcassets */; };
 		D0315D611D9604980058DC64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0315D5F1D9604980058DC64 /* LaunchScreen.storyboard */; };
@@ -55,6 +56,7 @@
 		66CBFC7B9414CA43931BA484 /* Pods-StartKitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartKitUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StartKitUITests/Pods-StartKitUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6B92F7CAC549C7D6E3C4A640 /* Pods_StartKitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StartKitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C5F9FBF20A72C64009AFF5C /* GitHubLoginConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubLoginConfiguration.swift; sourceTree = "<group>"; };
+		7C5F9FC220A73084009AFF5C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7C63A4DA20A46BF500DF5D47 /* GitHubLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubLoginViewController.swift; sourceTree = "<group>"; };
 		7C63A4DF20A4769C00DF5D47 /* GitHubLoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubLoginInteractor.swift; sourceTree = "<group>"; };
 		7C63A4E120A4772400DF5D47 /* GitHubLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GitHubLogin.storyboard; sourceTree = "<group>"; };
@@ -72,7 +74,7 @@
 		D0214F0A2099A63B00D51A4B /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		D0315D531D9604980058DC64 /* StartKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StartKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0315D561D9604980058DC64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D0315D581D9604980058DC64 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D0315D581D9604980058DC64 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		D0315D5B1D9604980058DC64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0315D5D1D9604980058DC64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0315D601D9604980058DC64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -131,6 +133,14 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
+		7C5F9FC120A7302E009AFF5C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7C5F9FC220A73084009AFF5C /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7C63A4D920A46BCA00DF5D47 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +153,7 @@
 		7C63A4DC20A46DF200DF5D47 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7C5F9FC120A7302E009AFF5C /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -231,7 +242,7 @@
 				D0214F0C2099A65B00D51A4B /* API */,
 				D2C0C2C77017C434EB639DE8 /* GitHub */,
 				D0315D561D9604980058DC64 /* AppDelegate.swift */,
-				D0315D581D9604980058DC64 /* ViewController.swift */,
+				D0315D581D9604980058DC64 /* ContainerViewController.swift */,
 				D0315D5A1D9604980058DC64 /* Main.storyboard */,
 				D0315D5F1D9604980058DC64 /* LaunchScreen.storyboard */,
 			);
@@ -617,13 +628,14 @@
 				D0214F022099A5B900D51A4B /* Request.swift in Sources */,
 				7CD22F4720A5BFE300A809FC /* GitHubLoginPresenter.swift in Sources */,
 				7C63A4E520A486F700DF5D47 /* UIView+Border.swift in Sources */,
-				D0315D591D9604980058DC64 /* ViewController.swift in Sources */,
+				D0315D591D9604980058DC64 /* ContainerViewController.swift in Sources */,
 				7C5F9FC020A72C64009AFF5C /* GitHubLoginConfiguration.swift in Sources */,
 				7C63A4DB20A46BF500DF5D47 /* GitHubLoginViewController.swift in Sources */,
 				7CD22F4420A5B77700A809FC /* GitHubLoginRequest.swift in Sources */,
 				D0315D571D9604980058DC64 /* AppDelegate.swift in Sources */,
 				7C63A4E020A4769C00DF5D47 /* GitHubLoginInteractor.swift in Sources */,
 				D0214F0B2099A63B00D51A4B /* Reachability.m in Sources */,
+				7C5F9FC320A73084009AFF5C /* HomeViewController.swift in Sources */,
 				D0214F042099A5DF00D51A4B /* RxClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
