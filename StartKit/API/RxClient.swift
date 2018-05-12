@@ -18,11 +18,23 @@ enum APIError: Error {
 }
 
 protocol RxClient {
+  mutating func configure(cachePolicy: NSURLRequest.CachePolicy)
   func send<T: Request>(_ r: T) -> Observable<T.Response>
   var host: String { get }
 }
 
 struct RxURLSessionClient: RxClient {
+  private var requestCachePolicy = URLSessionConfiguration.default.requestCachePolicy
+  private var session: URLSession {
+    let configuration = URLSessionConfiguration.default
+    configuration.requestCachePolicy = requestCachePolicy
+    return URLSession(configuration: configuration)
+  }
+  
+  mutating func configure(cachePolicy: NSURLRequest.CachePolicy) {
+    requestCachePolicy = cachePolicy
+  }
+  
   var host: String {
     return "https://api.github.com"
   }
@@ -35,7 +47,8 @@ struct RxURLSessionClient: RxClient {
     if (Reachability.forInternetConnection()?.currentReachabilityStatus() == NotReachable) {
       return Observable.error(APIError.networkError)
     }
-    return URLSession.shared.rx.response(request: request).flatMap { (response, data) -> Observable<T.Response> in
+    
+    return session.rx.response(request: request).flatMap { (response, data) -> Observable<T.Response> in
       if 200 ..< 300 ~= response.statusCode {
         print(HTTPCookieStorage.shared.cookies ?? "")
         
