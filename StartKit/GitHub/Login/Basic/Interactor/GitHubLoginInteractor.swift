@@ -30,8 +30,9 @@ class GitHubLoginInteractor: GitHubLoginInteractorProtocol {
     }
     
     client.send(request).observeOn(MainScheduler.instance)
-      .subscribe(onNext: { response in
+      .subscribe(onNext: { [weak self] response in
         print(response)
+        self?.presenter.dismissLoginView()
         // TODO: Localize user profile
         // TODO: dismiss login view controller
       }, onError: { error in

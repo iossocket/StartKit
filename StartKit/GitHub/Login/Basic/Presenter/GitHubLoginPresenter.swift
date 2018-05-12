@@ -9,9 +9,17 @@
 import Foundation
 
 protocol GitHubLoginPresenterProtocol {
-  
+  func dismissLoginView()
 }
 
 class GitHubLoginPresenter: GitHubLoginPresenterProtocol {
+  private let view: GitHubLoginView
   
+  init(view: GitHubLoginView) {
+    self.view = view
+  }
+  
+  func dismissLoginView() {
+    view.dismiss()
+  }
 }

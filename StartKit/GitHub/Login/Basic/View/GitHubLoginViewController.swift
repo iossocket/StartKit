@@ -9,7 +9,7 @@
 import UIKit
 
 protocol GitHubLoginView: class {
-  
+  func dismiss()
 }
 
 class GitHubLoginViewController: UIViewController {
@@ -19,8 +19,8 @@ class GitHubLoginViewController: UIViewController {
   
   var interactor: GitHubLoginInteractorProtocol!
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
+  func dismiss() {
+    view.isHidden = true
   }
   
   @IBAction func didClickLoginButton(sender: UIButton) {

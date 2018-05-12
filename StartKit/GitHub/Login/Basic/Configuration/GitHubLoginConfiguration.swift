@@ -10,7 +10,7 @@ import Foundation
 
 class GitHubLoginConfiguration {
   class func configure(viewController: GitHubLoginViewController) {
-    let presenter = GitHubLoginPresenter()
+    let presenter = GitHubLoginPresenter(view: viewController)
     var client = RxURLSessionClient()
     // MSG: We have to set request cache policy `reloadIgnoringLocalCacheData` for GitHub API issue,
     // we can see discussion here: https://platform.github.community/t/executing-a-request-again-results-in-412-precondition-failed/1456/3

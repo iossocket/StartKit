@@ -17,10 +17,7 @@ class ContainerViewController: UIViewController {
     addChildViewController(viewController)
     view.addSubview(viewController.view)
     viewController.didMove(toParentViewController: self)
-  }
-  
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
+    
     showLoginViewController()
   }
   
@@ -30,6 +27,9 @@ class ContainerViewController: UIViewController {
     }
     GitHubLoginConfiguration.configure(viewController: viewController)
     
-    present(viewController, animated: false, completion: nil)
+    viewController.willMove(toParentViewController: self)
+    addChildViewController(viewController)
+    view.addSubview(viewController.view)
+    viewController.didMove(toParentViewController: self)
   }
 }
