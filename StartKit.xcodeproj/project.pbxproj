@@ -15,6 +15,8 @@
 		7C63A4E020A4769C00DF5D47 /* GitHubLoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C63A4DF20A4769C00DF5D47 /* GitHubLoginInteractor.swift */; };
 		7C63A4E220A4772400DF5D47 /* GitHubLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C63A4E120A4772400DF5D47 /* GitHubLogin.storyboard */; };
 		7C63A4E520A486F700DF5D47 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C63A4E420A486F700DF5D47 /* UIView+Border.swift */; };
+		7C94668A20A76AB0009189B6 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C94668920A76AB0009189B6 /* LocalStorage.swift */; };
+		7C94668E20A76C6D009189B6 /* GitHub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7C94668C20A76C6D009189B6 /* GitHub.xcdatamodeld */; };
 		7CD22F4420A5B77700A809FC /* GitHubLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD22F4320A5B77700A809FC /* GitHubLoginRequest.swift */; };
 		7CD22F4720A5BFE300A809FC /* GitHubLoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD22F4620A5BFE300A809FC /* GitHubLoginPresenter.swift */; };
 		83700384D6955E5D01C1419A /* Pods_StartKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E097B8D6C304E6B7E836629 /* Pods_StartKit.framework */; };
@@ -61,6 +63,8 @@
 		7C63A4DF20A4769C00DF5D47 /* GitHubLoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubLoginInteractor.swift; sourceTree = "<group>"; };
 		7C63A4E120A4772400DF5D47 /* GitHubLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GitHubLogin.storyboard; sourceTree = "<group>"; };
 		7C63A4E420A486F700DF5D47 /* UIView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
+		7C94668920A76AB0009189B6 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		7C94668D20A76C6D009189B6 /* GitHub.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GitHub.xcdatamodel; sourceTree = "<group>"; };
 		7CD22F4320A5B77700A809FC /* GitHubLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubLoginRequest.swift; sourceTree = "<group>"; };
 		7CD22F4620A5BFE300A809FC /* GitHubLoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubLoginPresenter.swift; sourceTree = "<group>"; };
 		8EF741C4AB61026E66053368 /* Pods-StartKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-StartKit/Pods-StartKit.release.xcconfig"; sourceTree = "<group>"; };
@@ -198,6 +202,23 @@
 			path = Local;
 			sourceTree = "<group>";
 		};
+		7C94668820A76A8E009189B6 /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+				7C94668B20A76B38009189B6 /* CoreData */,
+				7C94668920A76AB0009189B6 /* LocalStorage.swift */,
+			);
+			path = LocalStorage;
+			sourceTree = "<group>";
+		};
+		7C94668B20A76B38009189B6 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				7C94668C20A76C6D009189B6 /* GitHub.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		7CD22F4520A5BFD500A809FC /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +274,7 @@
 		D0315D551D9604980058DC64 /* StartKit */ = {
 			isa = PBXGroup;
 			children = (
+				7C94668820A76A8E009189B6 /* LocalStorage */,
 				7C63A4E320A486CD00DF5D47 /* Extension */,
 				D0214F0D2099A67900D51A4B /* Config */,
 				D0214F0C2099A65B00D51A4B /* API */,
@@ -640,11 +662,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C94668E20A76C6D009189B6 /* GitHub.xcdatamodeld in Sources */,
 				D0214F002099A58200D51A4B /* ParameterEncoding.swift in Sources */,
 				D0214F022099A5B900D51A4B /* Request.swift in Sources */,
 				7CD22F4720A5BFE300A809FC /* GitHubLoginPresenter.swift in Sources */,
 				7C63A4E520A486F700DF5D47 /* UIView+Border.swift in Sources */,
 				D0315D591D9604980058DC64 /* ContainerViewController.swift in Sources */,
+				7C94668A20A76AB0009189B6 /* LocalStorage.swift in Sources */,
 				7C5F9FC020A72C64009AFF5C /* GitHubLoginConfiguration.swift in Sources */,
 				7C63A4DB20A46BF500DF5D47 /* GitHubLoginViewController.swift in Sources */,
 				7CD22F4420A5B77700A809FC /* GitHubLoginRequest.swift in Sources */,
@@ -962,6 +986,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7C94668C20A76C6D009189B6 /* GitHub.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7C94668D20A76C6D009189B6 /* GitHub.xcdatamodel */,
+			);
+			currentVersion = 7C94668D20A76C6D009189B6 /* GitHub.xcdatamodel */;
+			path = GitHub.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D0315D4B1D9604980058DC64 /* Project object */;
 }
