@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct GitHubBasicLoginRequest: Request {
+struct GitHubLoginRequest: Request {
   typealias Response = UserProfile
   
   let path: String = "/user"
@@ -18,7 +18,7 @@ struct GitHubBasicLoginRequest: Request {
   let encoding: ParameterEncoding? = .json
 }
 
-extension GitHubBasicLoginRequest {
+extension GitHubLoginRequest {
   init?(username: String, password: String) {
     guard let encodedAuthentication = base64Encode(emailOrUsername: username, password: password) else {
       return nil

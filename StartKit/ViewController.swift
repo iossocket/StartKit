@@ -9,12 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-  let xxx: GitHubLoginInteractorProtocol = GitHubLoginInteractor(client: RxURLSessionClient(), presenter: GitHubLoginPresenter())
-  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // TODO:
-    let viewController = UIStoryboard(name: "GitHubLogin", bundle: nil).instantiateViewController(withIdentifier: "GitHubLoginViewController")
+    
+    guard let viewController = UIStoryboard(name: "GitHubLogin", bundle: nil).instantiateViewController(withIdentifier: "GitHubLoginViewController") as? GitHubLoginViewController else {
+      return
+    }
+    
+    GitHubLoginConfiguration.configure(viewController: viewController)
     viewController.willMove(toParentViewController: self)
     addChildViewController(viewController)
     view.addSubview(viewController.view)

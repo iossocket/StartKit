@@ -25,15 +25,17 @@ class GitHubLoginInteractor: GitHubLoginInteractorProtocol {
   }
   
   func login(withEmailOrUsername emailOrUsername: String, password: String) {
-    guard let request = GitHubBasicLoginRequest(username: emailOrUsername, password: password) else {
+    guard let request = GitHubLoginRequest(username: emailOrUsername, password: password) else {
       return
     }
     
     client.send(request).observeOn(MainScheduler.instance)
       .subscribe(onNext: { response in
-        
-      }, onError: { _ in
-        
+        print(response)
+        // TODO: Localize user profile
+        // TODO: dismiss login view controller
+      }, onError: { error in
+        print(error.localizedDescription)
       }).disposed(by: disposeBag)
   }
   
