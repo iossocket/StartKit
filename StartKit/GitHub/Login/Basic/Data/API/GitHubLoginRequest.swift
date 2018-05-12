@@ -38,4 +38,13 @@ struct UserProfile: Decodable {
   var id: Int
   var login: String
   var avatar_url: String
+  var name: String
+  var company: String
+  
+  var blog: String
+  var email: String
+  var public_repos: Int
+  
+  var repos_url: String
+  var received_events_url: String
 }
