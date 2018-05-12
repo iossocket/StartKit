@@ -174,12 +174,28 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		7CD22F4220A5B75D00A809FC /* Request */ = {
+		7C94668520A769FE009189B6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7C94668720A76A14009189B6 /* Local */,
+				7C94668620A76A0F009189B6 /* API */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		7C94668620A76A0F009189B6 /* API */ = {
 			isa = PBXGroup;
 			children = (
 				7CD22F4320A5B77700A809FC /* GitHubLoginRequest.swift */,
 			);
-			path = Request;
+			path = API;
+			sourceTree = "<group>";
+		};
+		7C94668720A76A14009189B6 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Local;
 			sourceTree = "<group>";
 		};
 		7CD22F4520A5BFD500A809FC /* Presenter */ = {
@@ -288,8 +304,8 @@
 		D2C0CAA2E02FEB0D54DAB48A /* Basic */ = {
 			isa = PBXGroup;
 			children = (
+				7C94668520A769FE009189B6 /* Data */,
 				7C5F9FBE20A72C36009AFF5C /* Configuration */,
-				7CD22F4220A5B75D00A809FC /* Request */,
 				7CD22F4520A5BFD500A809FC /* Presenter */,
 				7C63A4DD20A46E1600DF5D47 /* Interactor */,
 				7C63A4D920A46BCA00DF5D47 /* View */,
