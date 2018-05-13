@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="75" id="KGk-i7-Jjw" customClass="GitHubEventCell" customModule="StartKit" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="74.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EcM-P1-2s2">
+                        <rect key="frame" x="31" y="11" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="RUb-pI-CAo"/>
+                            <constraint firstAttribute="width" constant="15" id="jgK-kY-2eY"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tus-hg-Ooc">
+                        <rect key="frame" x="16" y="34" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="8br-Fi-BCP"/>
+                            <constraint firstAttribute="height" constant="30" id="dSc-U3-DmR"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSJ-gQ-ZNh">
+                        <rect key="frame" x="54" y="11" width="31" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reh-Hf-JDb">
+                        <rect key="frame" x="54" y="31" width="250" height="36"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="BSJ-gQ-ZNh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="5r2-lj-IQO"/>
+                    <constraint firstAttribute="bottom" secondItem="reh-Hf-JDb" secondAttribute="bottom" constant="7.5" id="9Y5-Ir-kT6"/>
+                    <constraint firstAttribute="trailing" secondItem="reh-Hf-JDb" secondAttribute="trailing" constant="16" id="Ial-02-qg7"/>
+                    <constraint firstAttribute="bottom" secondItem="tus-hg-Ooc" secondAttribute="bottom" constant="10.5" id="L88-7k-f7f"/>
+                    <constraint firstItem="EcM-P1-2s2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="OAF-Qp-lgt"/>
+                    <constraint firstItem="reh-Hf-JDb" firstAttribute="leading" secondItem="tus-hg-Ooc" secondAttribute="trailing" constant="8" id="SNp-I5-LVH"/>
+                    <constraint firstItem="BSJ-gQ-ZNh" firstAttribute="leading" secondItem="EcM-P1-2s2" secondAttribute="trailing" constant="8" id="Ywm-nn-DQS"/>
+                    <constraint firstItem="EcM-P1-2s2" firstAttribute="leading" secondItem="tus-hg-Ooc" secondAttribute="trailing" constant="-15" id="rbr-nl-cuE"/>
+                    <constraint firstItem="tus-hg-Ooc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="zMf-Px-Qal"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="avatorImageView" destination="tus-hg-Ooc" id="txN-gi-Xyv"/>
+                <outlet property="descriptionLabel" destination="reh-Hf-JDb" id="pUv-LM-rf3"/>
+                <outlet property="timeLabel" destination="BSJ-gQ-ZNh" id="rRS-2Y-iUv"/>
+                <outlet property="typeIconImageView" destination="EcM-P1-2s2" id="CE1-3i-JFI"/>
+            </connections>
+            <point key="canvasLocation" x="25" y="67.5"/>
+        </tableViewCell>
+    </objects>
+</document>

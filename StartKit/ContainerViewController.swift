@@ -12,7 +12,9 @@ class ContainerViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    let viewController = HomeViewController()
+    guard let viewController = UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController() else {
+      return
+    }
     viewController.willMove(toParentViewController: self)
     addChildViewController(viewController)
     view.addSubview(viewController.view)
