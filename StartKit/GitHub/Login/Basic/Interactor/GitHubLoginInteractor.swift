@@ -34,9 +34,9 @@ class GitHubLoginInteractor: GitHubLoginInteractorProtocol {
     client.send(request).observeOn(MainScheduler.instance)
       .subscribe(onNext: { [weak self] response in
         self?.presenter.dismissLoginView()
-        self?.localStorage.save(object: UserMapper(domain: response))
-        self?.localStorage.queryOne(with: UserMapper(domain: response), completion: { (userProfile) in
-          print(userProfile)
+        self?.localStorage.save(object: response, mapper: UserMapper())
+        self?.localStorage.queryOne(withUsername: response.login, mapper: UserMapper(), completion: { (userProfile, error) in
+          print(userProfile as Any)
         })
         //TODO: Save in keychain
       }, onError: { error in

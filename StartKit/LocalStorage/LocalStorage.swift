@@ -9,6 +9,6 @@
 import Foundation
 
 protocol LocalStorage {
-  func save<T: DBMapper>(object: T)
-  func queryOne<T: DBMapper>(with object: T, completion: @escaping (T.Domain) -> ())
+  func save<M: DBMapper>(object: M.Domain, mapper: M)
+  func queryOne<M: DBMapper>(withUsername username: String, mapper: M, completion: @escaping (M.Domain?, Error?) -> ())
 }

@@ -10,9 +10,12 @@ import Foundation
 import CoreData
 
 protocol DBMapper {
-  associatedtype DBObject: DomainConvertable
-  typealias Domain = DBObject.Domain
+  associatedtype DBObject
+  associatedtype Domain
   
   var entityName: String { get }
-  var domain: Domain? { get }
+  
+  @discardableResult
+  func map(domain: Domain) -> DBObject?
+  func map(dbObject: DBObject) -> Domain?
 }

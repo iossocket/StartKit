@@ -10,22 +10,26 @@ import Foundation
 import CoreData
 
 class CoreDataLocalStorage: LocalStorage {
-  func save<T: DBMapper>(object: T) {
-    object.domain?.toDBObject(entityName: object.entityName)
+  func save<M: DBMapper>(object: M.Domain, mapper: M) {
+    mapper.map(domain: object)
     CoreDataStack.saveContext()
   }
   
-  func queryOne<T: DBMapper>(with object: T, completion: @escaping (T.Domain) -> ()) {
-    let request = NSFetchRequest<NSFetchRequestResult>(entityName: object.entityName)
+  func queryOne<M: DBMapper>(withUsername username: String, mapper: M, completion: @escaping (M.Domain?, Error?) -> ()) {
+    let request = NSFetchRequest<NSFetchRequestResult>(entityName: mapper.entityName)
     request.fetchLimit = 1
+    request.predicate = NSPredicate(format: "login == %@", username)
     do {
-      guard let fetchedObjects = try CoreDataStack.managedObjectContext.fetch(request) as? [T.DBObject],
-        let domain = fetchedObjects.first?.toDomainObject() else {
-        return
+      guard
+        let fetchedObjects = try CoreDataStack.managedObjectContext.fetch(request) as? [M.DBObject],
+        let object = fetchedObjects.first,
+        let domain = mapper.map(dbObject: object) else {
+          completion(nil, nil)
+          return
       }
-      completion(domain)
+      completion(domain, nil)
     } catch {
-      
+      completion(nil, error)
     }
   }
 }

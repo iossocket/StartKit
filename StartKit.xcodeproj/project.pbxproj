@@ -21,11 +21,7 @@
 		7CC7F05C20A780FF003269B0 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7F05B20A780FF003269B0 /* CoreDataStack.swift */; };
 		7CC7F05F20A7F1C7003269B0 /* DBMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7F05E20A7F1C7003269B0 /* DBMapper.swift */; };
 		7CC7F06220A7F30C003269B0 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7F06120A7F30C003269B0 /* UserProfile.swift */; };
-		7CC7F06420A7F5D5003269B0 /* DBObjectConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7F06320A7F5D5003269B0 /* DBObjectConvertable.swift */; };
-		7CC7F06720A7FD94003269B0 /* UserProfile+DBObjectConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7F06620A7FD94003269B0 /* UserProfile+DBObjectConvertable.swift */; };
 		7CC7F06920A800B3003269B0 /* UserMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7F06820A800B3003269B0 /* UserMapper.swift */; };
-		7CC7F06B20A81F15003269B0 /* DomainConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7F06A20A81F15003269B0 /* DomainConvertable.swift */; };
-		7CC7F06D20A81FC9003269B0 /* User+DomainConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7F06C20A81FC9003269B0 /* User+DomainConvertable.swift */; };
 		7CD22F4420A5B77700A809FC /* GitHubLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD22F4320A5B77700A809FC /* GitHubLoginRequest.swift */; };
 		7CD22F4720A5BFE300A809FC /* GitHubLoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD22F4620A5BFE300A809FC /* GitHubLoginPresenter.swift */; };
 		83700384D6955E5D01C1419A /* Pods_StartKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E097B8D6C304E6B7E836629 /* Pods_StartKit.framework */; };
@@ -78,11 +74,7 @@
 		7CC7F05B20A780FF003269B0 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		7CC7F05E20A7F1C7003269B0 /* DBMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMapper.swift; sourceTree = "<group>"; };
 		7CC7F06120A7F30C003269B0 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
-		7CC7F06320A7F5D5003269B0 /* DBObjectConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBObjectConvertable.swift; sourceTree = "<group>"; };
-		7CC7F06620A7FD94003269B0 /* UserProfile+DBObjectConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserProfile+DBObjectConvertable.swift"; sourceTree = "<group>"; };
 		7CC7F06820A800B3003269B0 /* UserMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMapper.swift; sourceTree = "<group>"; };
-		7CC7F06A20A81F15003269B0 /* DomainConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainConvertable.swift; sourceTree = "<group>"; };
-		7CC7F06C20A81FC9003269B0 /* User+DomainConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+DomainConvertable.swift"; sourceTree = "<group>"; };
 		7CD22F4320A5B77700A809FC /* GitHubLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubLoginRequest.swift; sourceTree = "<group>"; };
 		7CD22F4620A5BFE300A809FC /* GitHubLoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubLoginPresenter.swift; sourceTree = "<group>"; };
 		8EF741C4AB61026E66053368 /* Pods-StartKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-StartKit/Pods-StartKit.release.xcconfig"; sourceTree = "<group>"; };
@@ -237,7 +229,6 @@
 				7CC7F07020A825C8003269B0 /* Mapper */,
 				7CC7F06F20A825B6003269B0 /* DB */,
 				7CC7F06E20A8259E003269B0 /* Stack */,
-				7CC7F06520A7FD70003269B0 /* Model */,
 				7CC7F05920A77EC7003269B0 /* CoreDataLocalStorage.swift */,
 			);
 			path = CoreData;
@@ -249,14 +240,6 @@
 				7CC7F06120A7F30C003269B0 /* UserProfile.swift */,
 			);
 			path = Domain;
-			sourceTree = "<group>";
-		};
-		7CC7F06520A7FD70003269B0 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				7CC7F07120A82D73003269B0 /* User */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		7CC7F06E20A8259E003269B0 /* Stack */ = {
@@ -279,19 +262,8 @@
 			isa = PBXGroup;
 			children = (
 				7CC7F05E20A7F1C7003269B0 /* DBMapper.swift */,
-				7CC7F06320A7F5D5003269B0 /* DBObjectConvertable.swift */,
-				7CC7F06A20A81F15003269B0 /* DomainConvertable.swift */,
 			);
 			path = Mapper;
-			sourceTree = "<group>";
-		};
-		7CC7F07120A82D73003269B0 /* User */ = {
-			isa = PBXGroup;
-			children = (
-				7CC7F06620A7FD94003269B0 /* UserProfile+DBObjectConvertable.swift */,
-				7CC7F06C20A81FC9003269B0 /* User+DomainConvertable.swift */,
-			);
-			path = User;
 			sourceTree = "<group>";
 		};
 		7CD22F4520A5BFD500A809FC /* Presenter */ = {
@@ -741,9 +713,7 @@
 				7CC7F06920A800B3003269B0 /* UserMapper.swift in Sources */,
 				D0214F002099A58200D51A4B /* ParameterEncoding.swift in Sources */,
 				D0214F022099A5B900D51A4B /* Request.swift in Sources */,
-				7CC7F06720A7FD94003269B0 /* UserProfile+DBObjectConvertable.swift in Sources */,
 				7CD22F4720A5BFE300A809FC /* GitHubLoginPresenter.swift in Sources */,
-				7CC7F06D20A81FC9003269B0 /* User+DomainConvertable.swift in Sources */,
 				7C63A4E520A486F700DF5D47 /* UIView+Border.swift in Sources */,
 				D0315D591D9604980058DC64 /* ContainerViewController.swift in Sources */,
 				7C94668A20A76AB0009189B6 /* LocalStorage.swift in Sources */,
@@ -752,10 +722,8 @@
 				7C63A4DB20A46BF500DF5D47 /* GitHubLoginViewController.swift in Sources */,
 				7CD22F4420A5B77700A809FC /* GitHubLoginRequest.swift in Sources */,
 				D0315D571D9604980058DC64 /* AppDelegate.swift in Sources */,
-				7CC7F06B20A81F15003269B0 /* DomainConvertable.swift in Sources */,
 				7CC7F05F20A7F1C7003269B0 /* DBMapper.swift in Sources */,
 				7CC7F05C20A780FF003269B0 /* CoreDataStack.swift in Sources */,
-				7CC7F06420A7F5D5003269B0 /* DBObjectConvertable.swift in Sources */,
 				7CC7F06220A7F30C003269B0 /* UserProfile.swift in Sources */,
 				7C63A4E020A4769C00DF5D47 /* GitHubLoginInteractor.swift in Sources */,
 				D0214F0B2099A63B00D51A4B /* Reachability.m in Sources */,
