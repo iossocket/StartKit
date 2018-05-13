@@ -16,11 +16,13 @@ protocol GitHubLoginInteractorProtocol {
 
 class GitHubLoginInteractor: GitHubLoginInteractorProtocol {
   private let client: RxClient
+  private let localStorage: LocalStorage
   private let presenter: GitHubLoginPresenterProtocol
   private let disposeBag: DisposeBag = DisposeBag()
   
-  init(client: RxClient, presenter: GitHubLoginPresenterProtocol) {
+  init(client: RxClient, localStorage: LocalStorage, presenter: GitHubLoginPresenterProtocol) {
     self.client = client
+    self.localStorage = localStorage
     self.presenter = presenter
   }
   
@@ -33,8 +35,8 @@ class GitHubLoginInteractor: GitHubLoginInteractorProtocol {
       .subscribe(onNext: { [weak self] response in
         print(response)
         self?.presenter.dismissLoginView()
-        // TODO: Localize user profile
-        // TODO: dismiss login view controller
+        self?.localStorage.save(object: UserDBObject(domain: response))
+        //TODO: Save in keychain
       }, onError: { error in
         print(error.localizedDescription)
       }).disposed(by: disposeBag)

@@ -7,9 +7,14 @@
 //
 
 import Foundation
+import CoreData
 
 class CoreDataLocalStorage: LocalStorage {
-  func save<T>(object: T) {
-    
+  func save<T: DBObject>(object: T) {
+    guard let entityDescription = NSEntityDescription.entity(forEntityName: object.entityName, in: CoreDataStack.managedObjectContext) else {
+      return
+    }
+    object.domain.toManagedObject(entityDescription: entityDescription, context: CoreDataStack.managedObjectContext)
+    CoreDataStack.saveContext()
   }
 }

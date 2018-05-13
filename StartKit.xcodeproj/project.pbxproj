@@ -19,6 +19,11 @@
 		7C94668E20A76C6D009189B6 /* GitHub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7C94668C20A76C6D009189B6 /* GitHub.xcdatamodeld */; };
 		7CC7F05A20A77EC7003269B0 /* CoreDataLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7F05920A77EC7003269B0 /* CoreDataLocalStorage.swift */; };
 		7CC7F05C20A780FF003269B0 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7F05B20A780FF003269B0 /* CoreDataStack.swift */; };
+		7CC7F05F20A7F1C7003269B0 /* DBObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7F05E20A7F1C7003269B0 /* DBObject.swift */; };
+		7CC7F06220A7F30C003269B0 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7F06120A7F30C003269B0 /* UserProfile.swift */; };
+		7CC7F06420A7F5D5003269B0 /* DBObjectConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7F06320A7F5D5003269B0 /* DBObjectConvertable.swift */; };
+		7CC7F06720A7FD94003269B0 /* UserProfile+DBObjectConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7F06620A7FD94003269B0 /* UserProfile+DBObjectConvertable.swift */; };
+		7CC7F06920A800B3003269B0 /* UserDBObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7F06820A800B3003269B0 /* UserDBObject.swift */; };
 		7CD22F4420A5B77700A809FC /* GitHubLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD22F4320A5B77700A809FC /* GitHubLoginRequest.swift */; };
 		7CD22F4720A5BFE300A809FC /* GitHubLoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD22F4620A5BFE300A809FC /* GitHubLoginPresenter.swift */; };
 		83700384D6955E5D01C1419A /* Pods_StartKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E097B8D6C304E6B7E836629 /* Pods_StartKit.framework */; };
@@ -69,6 +74,11 @@
 		7C94668D20A76C6D009189B6 /* GitHub.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GitHub.xcdatamodel; sourceTree = "<group>"; };
 		7CC7F05920A77EC7003269B0 /* CoreDataLocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataLocalStorage.swift; sourceTree = "<group>"; };
 		7CC7F05B20A780FF003269B0 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		7CC7F05E20A7F1C7003269B0 /* DBObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBObject.swift; sourceTree = "<group>"; };
+		7CC7F06120A7F30C003269B0 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		7CC7F06320A7F5D5003269B0 /* DBObjectConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBObjectConvertable.swift; sourceTree = "<group>"; };
+		7CC7F06620A7FD94003269B0 /* UserProfile+DBObjectConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserProfile+DBObjectConvertable.swift"; sourceTree = "<group>"; };
+		7CC7F06820A800B3003269B0 /* UserDBObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBObject.swift; sourceTree = "<group>"; };
 		7CD22F4320A5B77700A809FC /* GitHubLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubLoginRequest.swift; sourceTree = "<group>"; };
 		7CD22F4620A5BFE300A809FC /* GitHubLoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubLoginPresenter.swift; sourceTree = "<group>"; };
 		8EF741C4AB61026E66053368 /* Pods-StartKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-StartKit/Pods-StartKit.release.xcconfig"; sourceTree = "<group>"; };
@@ -185,6 +195,7 @@
 		7C94668520A769FE009189B6 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				7CC7F06020A7F2FC003269B0 /* Domain */,
 				7C94668720A76A14009189B6 /* Local */,
 				7C94668620A76A0F009189B6 /* API */,
 			);
@@ -202,6 +213,7 @@
 		7C94668720A76A14009189B6 /* Local */ = {
 			isa = PBXGroup;
 			children = (
+				7CC7F06820A800B3003269B0 /* UserDBObject.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -211,6 +223,7 @@
 			children = (
 				7C94668B20A76B38009189B6 /* CoreData */,
 				7C94668920A76AB0009189B6 /* LocalStorage.swift */,
+				7CC7F05E20A7F1C7003269B0 /* DBObject.swift */,
 			);
 			path = LocalStorage;
 			sourceTree = "<group>";
@@ -218,11 +231,29 @@
 		7C94668B20A76B38009189B6 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				7CC7F06520A7FD70003269B0 /* Model */,
 				7C94668C20A76C6D009189B6 /* GitHub.xcdatamodeld */,
 				7CC7F05920A77EC7003269B0 /* CoreDataLocalStorage.swift */,
 				7CC7F05B20A780FF003269B0 /* CoreDataStack.swift */,
+				7CC7F06320A7F5D5003269B0 /* DBObjectConvertable.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		7CC7F06020A7F2FC003269B0 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				7CC7F06120A7F30C003269B0 /* UserProfile.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		7CC7F06520A7FD70003269B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7CC7F06620A7FD94003269B0 /* UserProfile+DBObjectConvertable.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		7CD22F4520A5BFD500A809FC /* Presenter */ = {
@@ -669,8 +700,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C94668E20A76C6D009189B6 /* GitHub.xcdatamodeld in Sources */,
+				7CC7F06920A800B3003269B0 /* UserDBObject.swift in Sources */,
 				D0214F002099A58200D51A4B /* ParameterEncoding.swift in Sources */,
 				D0214F022099A5B900D51A4B /* Request.swift in Sources */,
+				7CC7F06720A7FD94003269B0 /* UserProfile+DBObjectConvertable.swift in Sources */,
 				7CD22F4720A5BFE300A809FC /* GitHubLoginPresenter.swift in Sources */,
 				7C63A4E520A486F700DF5D47 /* UIView+Border.swift in Sources */,
 				D0315D591D9604980058DC64 /* ContainerViewController.swift in Sources */,
@@ -680,7 +713,10 @@
 				7C63A4DB20A46BF500DF5D47 /* GitHubLoginViewController.swift in Sources */,
 				7CD22F4420A5B77700A809FC /* GitHubLoginRequest.swift in Sources */,
 				D0315D571D9604980058DC64 /* AppDelegate.swift in Sources */,
+				7CC7F05F20A7F1C7003269B0 /* DBObject.swift in Sources */,
 				7CC7F05C20A780FF003269B0 /* CoreDataStack.swift in Sources */,
+				7CC7F06420A7F5D5003269B0 /* DBObjectConvertable.swift in Sources */,
+				7CC7F06220A7F30C003269B0 /* UserProfile.swift in Sources */,
 				7C63A4E020A4769C00DF5D47 /* GitHubLoginInteractor.swift in Sources */,
 				D0214F0B2099A63B00D51A4B /* Reachability.m in Sources */,
 				7C5F9FC320A73084009AFF5C /* HomeViewController.swift in Sources */,

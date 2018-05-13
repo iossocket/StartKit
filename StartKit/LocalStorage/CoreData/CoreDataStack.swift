@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+let CoreDataErrorDomain = "com.thoughtworks.error.coredata"
+
 class CoreDataStack {
   
   static var applicationDocumentsDirectory: URL = {
@@ -19,7 +21,7 @@ class CoreDataStack {
   
   static var managedObjectModel: NSManagedObjectModel = {
     // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
-    let modelURL = Bundle(for: CoreDataStack.self).url(forResource: "DatabaseTest", withExtension: "momd")! // type your database name here..
+    let modelURL = Bundle(for: CoreDataStack.self).url(forResource: "GitHub", withExtension: "momd")! // type your database name here..
     return NSManagedObjectModel(contentsOf: modelURL)!
   }()
   
@@ -27,7 +29,8 @@ class CoreDataStack {
     // The persistent store coordinator for the application. This implementation creates and returns a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
     // Create the coordinator and store
     let coordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
-    let url = applicationDocumentsDirectory.appendingPathComponent("DatabaseTest.sqlite") // type your database name here...
+    let url = applicationDocumentsDirectory.appendingPathComponent("GitHub.sqlite") // type your database name here...
+    print("CoreData sqlite URL: \(url.absoluteString)")
     var failureReason = "There was an error creating or loading the application's saved data."
     let options = [NSMigratePersistentStoresAutomaticallyOption: NSNumber(value: true as Bool), NSInferMappingModelAutomaticallyOption: NSNumber(value: true as Bool)]
     do {
@@ -39,7 +42,7 @@ class CoreDataStack {
       dict[NSLocalizedFailureReasonErrorKey] = failureReason as AnyObject
       
       dict[NSUnderlyingErrorKey] = error as NSError
-      let wrappedError = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
+      let wrappedError = NSError(domain: CoreDataErrorDomain, code: 9999, userInfo: dict)
       // Replace this with code to handle the error appropriately.
       // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
       NSLog("Unresolved error \(wrappedError), \(wrappedError.userInfo)")

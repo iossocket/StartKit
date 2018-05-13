@@ -9,5 +9,5 @@
 import Foundation
 
 protocol LocalStorage {
-  func save<T>(object: T)
+  func save<T: DBObject>(object: T)
 }
