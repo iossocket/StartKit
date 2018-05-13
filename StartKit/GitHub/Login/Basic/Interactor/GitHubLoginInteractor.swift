@@ -27,6 +27,7 @@ class GitHubLoginInteractor: GitHubLoginInteractorProtocol {
   }
   
   func login(withEmailOrUsername emailOrUsername: String, password: String) {
+    localStorage.deleteAllObjects(for: UserMapper().entityName)
     guard let request = GitHubLoginRequest(username: emailOrUsername, password: password) else {
       return
     }
@@ -35,12 +36,9 @@ class GitHubLoginInteractor: GitHubLoginInteractorProtocol {
       .subscribe(onNext: { [weak self] response in
         self?.presenter.dismissLoginView()
         self?.localStorage.save(object: response, mapper: UserMapper())
-        self?.localStorage.queryOne(withUsername: response.login, mapper: UserMapper(), completion: { (userProfile, error) in
-          print(userProfile as Any)
-        })
         //TODO: Save in keychain
       }, onError: { error in
-        print(error.localizedDescription)
+        print("GitHub Login failed: \(error.localizedDescription)")
       }).disposed(by: disposeBag)
   }
   
