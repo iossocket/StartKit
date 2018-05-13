@@ -9,6 +9,20 @@
 import Foundation
 
 struct KeychainAccessor {
+  func currentAccount() -> (accunt: String, password: String)? {
+    do {
+      let passwordItems = try KeychainPasswordItem.passwordItems(forService: KeychainConfiguration.serviceName, accessGroup: KeychainConfiguration.accessGroup)
+      let currentAccount = passwordItems.first
+      guard let account = currentAccount?.account, let password = try currentAccount?.readPassword() else {
+        return nil
+      }
+      return (account, password)
+    } catch {
+      print("Error reading password from keychain - \(error)")
+      return nil
+    }
+  }
+  
   func savePassword(_ password: String, into account: String) {
     do {
       let passwordItem = KeychainPasswordItem(service: KeychainConfiguration.serviceName, account: account, accessGroup: KeychainConfiguration.accessGroup)
@@ -24,13 +38,14 @@ struct KeychainAccessor {
       return try passwordItem.readPassword()
     } catch {
       print("Error reading password from keychain - \(error)")
+      return ""
     }
   }
   
   func clearAccount() {
     do {
       let passwordItems = try KeychainPasswordItem.passwordItems(forService: KeychainConfiguration.serviceName, accessGroup: KeychainConfiguration.accessGroup)
-      passwordItems.forEach { try $0.deleteItem() }
+      try passwordItems.forEach { try $0.deleteItem() }
     } catch {
       print("Error deleting password items - \(error)")
     }

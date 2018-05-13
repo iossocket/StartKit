@@ -19,6 +19,11 @@ class GitHubLoginViewController: UIViewController {
   
   var interactor: GitHubLoginInteractorProtocol!
   
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    interactor.tryLoginViaKeychain()
+  }
+  
   func dismiss() {
     view.isHidden = true
   }
