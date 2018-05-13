@@ -15,17 +15,37 @@ protocol GitHubEventsView {
 
 class GitHubEventsViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
+  private let refreshControl = UIRefreshControl()
   
   private let eventCellNibName = "GitHubEventCell"
   static let eventCellReuseIdentifier = "GitHubEventCell"
   
+  var interactor: GitHubEventsInteractor!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    GitHubEventConfiguration.configure(viewController: self)
     setupTableView()
+    setupRefreshControl()
+    interactor.loadEvents()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    interactor.loadEvents()
   }
   
   private func setupTableView() {
     tableView.register(UINib(nibName: eventCellNibName, bundle: nil), forCellReuseIdentifier: GitHubEventsViewController.eventCellReuseIdentifier)
+  }
+  
+  private func setupRefreshControl() {
+    refreshControl.addTarget(self, action: #selector(reloadEvents), for: .valueChanged)
+    tableView.addSubview(refreshControl)
+  }
+  
+  @objc private func reloadEvents() {
+    interactor.loadEvents()
   }
 }
 
@@ -36,6 +56,6 @@ extension GitHubEventsViewController: GitHubEventsView {
   }
   
   func stopLoadingIfNeeded() {
-    
+    refreshControl.endRefreshing()
   }
 }
