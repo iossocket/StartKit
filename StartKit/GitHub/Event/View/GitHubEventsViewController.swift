@@ -10,6 +10,7 @@ import UIKit
 
 protocol GitHubEventsView {
   func configure(with dataSource: GitHubEventsDataSource)
+  func stopLoadingIfNeeded()
 }
 
 class GitHubEventsViewController: UIViewController {
@@ -32,5 +33,9 @@ extension GitHubEventsViewController: GitHubEventsView {
   func configure(with dataSource: GitHubEventsDataSource) {
     tableView.dataSource = dataSource
     tableView.reloadData()
+  }
+  
+  func stopLoadingIfNeeded() {
+    
   }
 }

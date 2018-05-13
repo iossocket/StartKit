@@ -9,7 +9,7 @@
 import Foundation
 
 struct Event: Decodable {
-  var id: Int
+  var id: String
   var type: String
   var actor: Actor
   var repo: Repo

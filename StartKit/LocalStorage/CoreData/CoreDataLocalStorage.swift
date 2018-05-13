@@ -15,10 +15,9 @@ class CoreDataLocalStorage: LocalStorage {
     CoreDataStack.saveContext()
   }
   
-  func queryOne<M: DBMapper>(withUsername username: String, mapper: M, completion: @escaping (M.Domain?, Error?) -> ()) {
+  func queryOne<M: DBMapper>(withMapper mapper: M, completion: @escaping (M.Domain?, Error?) -> ()) {
     let request = NSFetchRequest<NSFetchRequestResult>(entityName: mapper.entityName)
     request.fetchLimit = 1
-    request.predicate = NSPredicate(format: "login == %@", username)
     do {
       guard
         let fetchedObjects = try CoreDataStack.managedObjectContext.fetch(request) as? [M.DBObject],

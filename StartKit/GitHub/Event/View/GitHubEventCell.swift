@@ -19,6 +19,8 @@ class GitHubEventCell: UITableViewCell {
   }
   
   func configure(with event: Event) {
-    
+    let viewModel = GitHubEventCellViewModel(event: event)
+    timeLabel.text = viewModel.time
+    descriptionLabel.text = viewModel.description
   }
 }
