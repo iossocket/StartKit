@@ -15,7 +15,12 @@ class GitHubLoginConfiguration {
     // MSG: We have to set request cache policy `reloadIgnoringLocalCacheData` for GitHub API issue,
     // we can see discussion here: https://platform.github.community/t/executing-a-request-again-results-in-412-precondition-failed/1456/3
     client.configure(cachePolicy: .reloadIgnoringLocalCacheData)
-    let interactor = GitHubLoginInteractor(client: client, localStorage: CoreDataLocalStorage(), presenter: presenter)
+    let interactor = GitHubLoginInteractor(
+      client: client,
+      localStorage: CoreDataLocalStorage(),
+      keychainAccessor: KeychainAccessor(),
+      presenter: presenter
+    )
     viewController.interactor = interactor
   }
 }

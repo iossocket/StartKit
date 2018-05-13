@@ -18,16 +18,19 @@ class GitHubLoginInteractor: GitHubLoginInteractorProtocol {
   private let client: RxClient
   private let localStorage: LocalStorage
   private let presenter: GitHubLoginPresenterProtocol
+  private let keychainAccessor: KeychainAccessor
   private let disposeBag: DisposeBag = DisposeBag()
   
-  init(client: RxClient, localStorage: LocalStorage, presenter: GitHubLoginPresenterProtocol) {
+  init(client: RxClient, localStorage: LocalStorage, keychainAccessor: KeychainAccessor, presenter: GitHubLoginPresenterProtocol) {
     self.client = client
     self.localStorage = localStorage
+    self.keychainAccessor = keychainAccessor
     self.presenter = presenter
   }
   
   func login(withEmailOrUsername emailOrUsername: String, password: String) {
     localStorage.deleteAllObjects(for: UserMapper().entityName)
+    keychainAccessor.clearAccount()
     guard let request = GitHubLoginRequest(username: emailOrUsername, password: password) else {
       return
     }
@@ -36,7 +39,7 @@ class GitHubLoginInteractor: GitHubLoginInteractorProtocol {
       .subscribe(onNext: { [weak self] response in
         self?.presenter.dismissLoginView()
         self?.localStorage.save(object: response, mapper: UserMapper())
-        //TODO: Save in keychain
+        self?.keychainAccessor.savePassword(password, into: emailOrUsername)
       }, onError: { error in
         print("GitHub Login failed: \(error.localizedDescription)")
       }).disposed(by: disposeBag)
