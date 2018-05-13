@@ -19,6 +19,7 @@
 		7C4DF0B220A8B9E400BBBA42 /* GitHubEventsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4DF0B120A8B9E400BBBA42 /* GitHubEventsInteractor.swift */; };
 		7C4DF0B520A8C18700BBBA42 /* GitHubEventsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4DF0B420A8C18700BBBA42 /* GitHubEventsPresenter.swift */; };
 		7C4DF0B820A8C2DC00BBBA42 /* GitHubEventCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4DF0B720A8C2DC00BBBA42 /* GitHubEventCellViewModel.swift */; };
+		7C4DF0BA20A8C47800BBBA42 /* ImageView+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4DF0B920A8C47800BBBA42 /* ImageView+Networking.swift */; };
 		7C5F9FC020A72C64009AFF5C /* GitHubLoginConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5F9FBF20A72C64009AFF5C /* GitHubLoginConfiguration.swift */; };
 		7C63A4DB20A46BF500DF5D47 /* GitHubLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C63A4DA20A46BF500DF5D47 /* GitHubLoginViewController.swift */; };
 		7C63A4E020A4769C00DF5D47 /* GitHubLoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C63A4DF20A4769C00DF5D47 /* GitHubLoginInteractor.swift */; };
@@ -84,6 +85,7 @@
 		7C4DF0B120A8B9E400BBBA42 /* GitHubEventsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubEventsInteractor.swift; sourceTree = "<group>"; };
 		7C4DF0B420A8C18700BBBA42 /* GitHubEventsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubEventsPresenter.swift; sourceTree = "<group>"; };
 		7C4DF0B720A8C2DC00BBBA42 /* GitHubEventCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubEventCellViewModel.swift; sourceTree = "<group>"; };
+		7C4DF0B920A8C47800BBBA42 /* ImageView+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Networking.swift"; sourceTree = "<group>"; };
 		7C5F9FBF20A72C64009AFF5C /* GitHubLoginConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubLoginConfiguration.swift; sourceTree = "<group>"; };
 		7C63A4DA20A46BF500DF5D47 /* GitHubLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubLoginViewController.swift; sourceTree = "<group>"; };
 		7C63A4DF20A4769C00DF5D47 /* GitHubLoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubLoginInteractor.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				7C63A4E420A486F700DF5D47 /* UIView+Border.swift */,
+				7C4DF0B920A8C47800BBBA42 /* ImageView+Networking.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -852,6 +855,7 @@
 				7C4DF0A120A8770400BBBA42 /* GitHubEventsViewController.swift in Sources */,
 				7C4DF0AF20A8B37100BBBA42 /* GitHubEventsRequest.swift in Sources */,
 				7CC7F05C20A780FF003269B0 /* CoreDataStack.swift in Sources */,
+				7C4DF0BA20A8C47800BBBA42 /* ImageView+Networking.swift in Sources */,
 				7CC7F06220A7F30C003269B0 /* UserProfile.swift in Sources */,
 				7C63A4E020A4769C00DF5D47 /* GitHubLoginInteractor.swift in Sources */,
 				D0214F0B2099A63B00D51A4B /* Reachability.m in Sources */,
