@@ -10,7 +10,14 @@ import Foundation
 import CoreData
 
 extension UserProfile: DBObjectConvertable {
-  func toManagedObject(entityDescription: NSEntityDescription, context: NSManagedObjectContext) -> NSManagedObject {
+  typealias DBObject = User
+  
+  func toDBObject(entityName: String) -> User? {
+    let context = CoreDataStack.managedObjectContext
+    guard let entityDescription = NSEntityDescription.entity(forEntityName: entityName, in: context) else {
+      return nil
+    }
+    
     let user = User(entity: entityDescription, insertInto: context)
     
     user.id = id

@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct UserDBObject: DBObject {
-  typealias Domain = UserProfile
+struct UserMapper: DBMapper {
+  typealias DBObject = User
   
   let entityName: String = "User"
-  let domain: UserProfile
+  let domain: UserProfile?
 }

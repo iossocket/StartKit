@@ -10,6 +10,8 @@ import Foundation
 import CoreData
 
 protocol DBObjectConvertable {
+  associatedtype DBObject: DomainConvertable
+  
   @discardableResult
-  func toManagedObject(entityDescription: NSEntityDescription, context: NSManagedObjectContext) -> NSManagedObject
+  func toDBObject(entityName: String) -> DBObject?
 }

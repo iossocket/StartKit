@@ -1,5 +1,5 @@
 //
-//  DBObject.swift
+//  DomainConvertable.swift
 //  StartKit
 //
 //  Created by Xin Guo  on 2018/5/13.
@@ -7,11 +7,9 @@
 //
 
 import Foundation
-import CoreData
 
-protocol DBObject {
+protocol DomainConvertable {
   associatedtype Domain: DBObjectConvertable
   
-  var entityName: String { get }
-  var domain: Domain { get }
+  func toDomainObject() -> Domain?
 }
