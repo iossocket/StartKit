@@ -38,6 +38,7 @@ class GitHubEventsViewController: UIViewController {
   
   private func setupTableView() {
     tableView.register(UINib(nibName: eventCellNibName, bundle: nil), forCellReuseIdentifier: GitHubEventsViewController.eventCellReuseIdentifier)
+    tableView.tableFooterView = UIView()
   }
   
   private func setupRefreshControl() {
