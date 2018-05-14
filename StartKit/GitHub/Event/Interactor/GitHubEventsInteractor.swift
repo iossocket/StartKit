@@ -31,7 +31,7 @@ class GitHubEventsInteractor: GitHubEventsInteractorProtocol {
     localStorage.queryOne(withMapper: UserMapper())
       .observeOn(MainScheduler.instance)
       .subscribe(onNext: { [weak self] userProfile in
-        guard let strongSelf = self, let username = userProfile?.login, let password = strongSelf.keychainAccessor.currentAccount()?.1 else {
+        guard let strongSelf = self, let username = userProfile?.login, let password = strongSelf.keychainAccessor.currentAccount()?.password else {
           self?.presenter.configureEventList(with: [])
           return
         }

@@ -21,7 +21,6 @@ class GitHubLoginViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    interactor.tryLoginViaKeychain()
   }
   
   func dismiss() {

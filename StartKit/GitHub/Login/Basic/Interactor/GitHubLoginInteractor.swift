@@ -31,7 +31,7 @@ class GitHubLoginInteractor: GitHubLoginInteractorProtocol {
   }
   
   func tryLoginViaKeychain() {
-    guard let account = keychainAccessor.currentAccount()?.0, let password = keychainAccessor.currentAccount()?.1 else {
+    guard let account = keychainAccessor.currentAccount()?.account, let password = keychainAccessor.currentAccount()?.password else {
       return
     }
     // TODO: Presenter show loading

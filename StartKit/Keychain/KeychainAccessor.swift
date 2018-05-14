@@ -9,7 +9,7 @@
 import Foundation
 
 struct KeychainAccessor {
-  func currentAccount() -> (accunt: String, password: String)? {
+  func currentAccount() -> (account: String, password: String)? {
     do {
       let passwordItems = try KeychainPasswordItem.passwordItems(forService: KeychainConfiguration.serviceName, accessGroup: KeychainConfiguration.accessGroup)
       let currentAccount = passwordItems.first
