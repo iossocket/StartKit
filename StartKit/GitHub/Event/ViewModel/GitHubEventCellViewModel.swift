@@ -30,7 +30,19 @@ struct GitHubEventCellViewModel {
   }
   
   var time: String {
-    return event.created_at
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+    dateFormatter.timeZone = TimeZone(identifier: "Asia/Shanghai")
+    guard let date = dateFormatter.date(from: event.created_at) else {
+      return ""
+    }
+    let time = Date().timeIntervalSince(date)
+    let days = Int(time / 24 / 60 / 60)
+    if days == 0 {
+      return "today"
+    } else {
+      return "\(days) days ago"
+    }
   }
   
   var description: NSAttributedString {
