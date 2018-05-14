@@ -16,7 +16,7 @@ struct UserMapper: DBMapper {
   let entityName: String = "User"
   
   private var context: NSManagedObjectContext {
-    return CoreDataStack.managedObjectContext
+    return CoreDataStack.shared.managedObjectContext
   }
   
   private var entityDescription: NSEntityDescription? {

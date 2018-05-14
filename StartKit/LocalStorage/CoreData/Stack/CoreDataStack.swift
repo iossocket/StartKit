@@ -12,20 +12,21 @@ import CoreData
 let CoreDataErrorDomain = "com.thoughtworks.error.coredata"
 
 class CoreDataStack {
+  static let shared: CoreDataStack = CoreDataStack()
   
-  static var applicationDocumentsDirectory: URL = {
+  var applicationDocumentsDirectory: URL = {
     
     let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
     return urls[urls.count-1]
   }()
   
-  static var managedObjectModel: NSManagedObjectModel = {
+  var managedObjectModel: NSManagedObjectModel = {
     // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
     let modelURL = Bundle(for: CoreDataStack.self).url(forResource: "GitHub", withExtension: "momd")! // type your database name here..
     return NSManagedObjectModel(contentsOf: modelURL)!
   }()
   
-  static var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
+  lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
     // The persistent store coordinator for the application. This implementation creates and returns a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
     // Create the coordinator and store
     let coordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
@@ -52,7 +53,7 @@ class CoreDataStack {
     return coordinator
   }()
   
-  static var managedObjectContext: NSManagedObjectContext = {
+  lazy var managedObjectContext: NSManagedObjectContext = {
     // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) This property is optional since there are legitimate error conditions that could cause the creation of the context to fail.
     let coordinator = persistentStoreCoordinator
     var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
@@ -62,7 +63,7 @@ class CoreDataStack {
   
   // MARK: - Core Data Saving support
   
-  static func saveContext () {
+  func saveContext () {
     if managedObjectContext.hasChanges {
       do {
         try managedObjectContext.save()

@@ -11,9 +11,15 @@ import CoreData
 import RxSwift
 
 class CoreDataLocalStorage: LocalStorage {
+  private let coredataStack: CoreDataStack
+  
+  init(coredataStack: CoreDataStack = CoreDataStack.shared) {
+    self.coredataStack = coredataStack
+  }
+  
   func save<M: DBMapper>(object: M.Domain, mapper: M) {
     mapper.map(domain: object)
-    CoreDataStack.saveContext()
+    coredataStack.saveContext()
   }
   
   func queryOne<M: DBMapper>(withMapper mapper: M) -> Observable<M.Domain?> {
@@ -22,7 +28,7 @@ class CoreDataLocalStorage: LocalStorage {
     
     do {
       guard
-        let fetchedObjects = try CoreDataStack.managedObjectContext.fetch(request) as? [M.DBObject],
+        let fetchedObjects = try coredataStack.managedObjectContext.fetch(request) as? [M.DBObject],
         let object = fetchedObjects.first,
         let domain = mapper.map(dbObject: object) else {
           return Observable.just(nil)
@@ -37,8 +43,8 @@ class CoreDataLocalStorage: LocalStorage {
     let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
     let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
     do {
-      try CoreDataStack.persistentStoreCoordinator.execute(deleteRequest, with: CoreDataStack.managedObjectContext)
-      CoreDataStack.saveContext()
+      try coredataStack.persistentStoreCoordinator.execute(deleteRequest, with: coredataStack.managedObjectContext)
+      coredataStack.saveContext()
     } catch {
       print("CoreData delete objects failed: \(error.localizedDescription)")
     }
