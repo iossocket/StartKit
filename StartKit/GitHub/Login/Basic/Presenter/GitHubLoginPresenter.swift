@@ -20,6 +20,6 @@ class GitHubLoginPresenter: GitHubLoginPresenterProtocol {
   }
   
   func dismissLoginView() {
-    view.dismiss()
+    view.dismiss?()
   }
 }
