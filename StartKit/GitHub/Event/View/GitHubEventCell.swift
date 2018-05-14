@@ -23,5 +23,6 @@ class GitHubEventCell: UITableViewCell {
     timeLabel.text = viewModel.time
     descriptionLabel.attributedText = viewModel.description
     viewModel.avatorURL.flatMap(avatorImageView.configureImage(withURL:))
+    typeIconImageView.image = viewModel.typeIconImage
   }
 }

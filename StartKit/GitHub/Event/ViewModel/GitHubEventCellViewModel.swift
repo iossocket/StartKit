@@ -25,6 +25,21 @@ struct GitHubEventCellViewModel {
     self.eventType = GitHubEventType(rawValue: event.type) ?? .unknown
   }
   
+  var typeIconImage: UIImage? {
+    switch eventType {
+    case .fork:
+      return #imageLiteral(resourceName: "fork")
+    case .member:
+      return #imageLiteral(resourceName: "member")
+    case .watch:
+      return #imageLiteral(resourceName: "star")
+    case .create:
+      return #imageLiteral(resourceName: "repository")
+    case .unknown:
+      return nil
+    }
+  }
+  
   var avatorURL: URL? {
     return URL(string: event.actor.avatar_url)
   }
