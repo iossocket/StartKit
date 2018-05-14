@@ -15,13 +15,17 @@ struct GitHubEventsRequest: Request {
   var path: String
   let method: HTTPMethod = .get
   let parameter: [String : Any] = [:]
-  var headers: [String : String]? = nil
+  var headers: [String : String]? = [:]
   let encoding: ParameterEncoding? = nil
 }
 
 extension GitHubEventsRequest {
-  init(username: String) {
+  init(username: String, password: String) {
     self.username = username
     self.path = "/users/\(username)/received_events"
+    guard let encodedAuthentication = base64Encode(emailOrUsername: username, password: password) else {
+      return
+    }
+    headers?["Authorization"] = "Basic \(encodedAuthentication)"
   }
 }

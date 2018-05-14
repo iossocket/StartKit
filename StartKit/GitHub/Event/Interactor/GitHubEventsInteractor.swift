@@ -16,24 +16,26 @@ protocol GitHubEventsInteractorProtocol {
 class GitHubEventsInteractor: GitHubEventsInteractorProtocol {
   private let presenter: GitHubEventsPresenterProtocol
   private let localStorage: LocalStorage
+  private let keychainAccessor: KeychainAccessor
   private let client: RxClient
   private let disposeBag: DisposeBag = DisposeBag()
   
-  init(presenter: GitHubEventsPresenterProtocol, client: RxClient, localStorage: LocalStorage) {
+  init(presenter: GitHubEventsPresenterProtocol, client: RxClient, localStorage: LocalStorage, keychainAccessor: KeychainAccessor) {
     self.presenter = presenter
     self.localStorage = localStorage
     self.client = client
+    self.keychainAccessor = keychainAccessor
   }
   
   func loadEvents() {
     localStorage.queryOne(withMapper: UserMapper())
       .observeOn(MainScheduler.instance)
       .subscribe(onNext: { [weak self] userProfile in
-        guard let strongSelf = self, let username = userProfile?.login else {
+        guard let strongSelf = self, let username = userProfile?.login, let password = strongSelf.keychainAccessor.currentAccount()?.1 else {
           self?.presenter.configureEventList(with: [])
           return
         }
-        let request = GitHubEventsRequest(username: username)
+        let request = GitHubEventsRequest(username: username, password: password)
         strongSelf.client.send(request).observeOn(MainScheduler.instance)
           .subscribe(onNext: { [weak self] events in
             self?.presenter.configureEventList(with: events)

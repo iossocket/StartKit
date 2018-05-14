@@ -21,7 +21,7 @@ class GitHubEventCell: UITableViewCell {
   func configure(with event: Event) {
     let viewModel = GitHubEventCellViewModel(event: event)
     timeLabel.text = viewModel.time
-    descriptionLabel.text = viewModel.description
+    descriptionLabel.attributedText = viewModel.description
     viewModel.avatorURL.flatMap(avatorImageView.configureImage(withURL:))
   }
 }

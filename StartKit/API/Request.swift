@@ -26,6 +26,14 @@ protocol Request {
   associatedtype Response: Decodable
 }
 
+extension Request {
+  func base64Encode(emailOrUsername: String, password: String) -> String? {
+    let credentialsData = "\(emailOrUsername):\(password)".data(using: .utf8)
+    let base64Credentials = credentialsData?.base64EncodedString()
+    return base64Credentials
+  }
+}
+
 extension Data {
   func jsonDataMapModel<T: Decodable>(_ type: T.Type) -> T? {
     let decoder = JSONDecoder()

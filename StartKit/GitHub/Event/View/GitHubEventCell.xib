@@ -32,6 +32,11 @@
                             <constraint firstAttribute="width" constant="30" id="8br-Fi-BCP"/>
                             <constraint firstAttribute="height" constant="30" id="dSc-U3-DmR"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSJ-gQ-ZNh">
                         <rect key="frame" x="54" y="11" width="31" height="15"/>
@@ -55,6 +60,7 @@
                     <constraint firstItem="reh-Hf-JDb" firstAttribute="leading" secondItem="tus-hg-Ooc" secondAttribute="trailing" constant="8" id="SNp-I5-LVH"/>
                     <constraint firstItem="BSJ-gQ-ZNh" firstAttribute="leading" secondItem="EcM-P1-2s2" secondAttribute="trailing" constant="8" id="Ywm-nn-DQS"/>
                     <constraint firstItem="EcM-P1-2s2" firstAttribute="leading" secondItem="tus-hg-Ooc" secondAttribute="trailing" constant="-15" id="rbr-nl-cuE"/>
+                    <constraint firstItem="reh-Hf-JDb" firstAttribute="top" secondItem="BSJ-gQ-ZNh" secondAttribute="bottom" constant="5" id="ufj-K5-yki"/>
                     <constraint firstItem="tus-hg-Ooc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="zMf-Px-Qal"/>
                 </constraints>
             </tableViewCellContentView>

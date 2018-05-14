@@ -26,10 +26,4 @@ extension GitHubLoginRequest {
     
     headers?["Authorization"] = "Basic \(encodedAuthentication)"
   }
-  
-  private func base64Encode(emailOrUsername: String, password: String) -> String? {
-    let credentialsData = "\(emailOrUsername):\(password)".data(using: .utf8)
-    let base64Credentials = credentialsData?.base64EncodedString()
-    return base64Credentials
-  }
 }

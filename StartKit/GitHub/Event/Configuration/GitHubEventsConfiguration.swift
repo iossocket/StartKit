@@ -14,7 +14,8 @@ class GitHubEventConfiguration {
     let interactor = GitHubEventsInteractor(
       presenter: presenter,
       client: RxURLSessionClient(),
-      localStorage: CoreDataLocalStorage()
+      localStorage: CoreDataLocalStorage(),
+      keychainAccessor: KeychainAccessor()
     )
     viewController.interactor = interactor
   }
