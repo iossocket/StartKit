@@ -16,23 +16,6 @@ class CoreDataLocalStorage: LocalStorage {
     CoreDataStack.saveContext()
   }
   
-  func queryOne<M: DBMapper>(withMapper mapper: M, completion: @escaping (M.Domain?, Error?) -> ()) {
-    let request = NSFetchRequest<NSFetchRequestResult>(entityName: mapper.entityName)
-    request.fetchLimit = 1
-    do {
-      guard
-        let fetchedObjects = try CoreDataStack.managedObjectContext.fetch(request) as? [M.DBObject],
-        let object = fetchedObjects.first,
-        let domain = mapper.map(dbObject: object) else {
-          completion(nil, nil)
-          return
-      }
-      completion(domain, nil)
-    } catch {
-      completion(nil, error)
-    }
-  }
-  
   func queryOne<M: DBMapper>(withMapper mapper: M) -> Observable<M.Domain?> {
     let request = NSFetchRequest<NSFetchRequestResult>(entityName: mapper.entityName)
     request.fetchLimit = 1
@@ -55,6 +38,7 @@ class CoreDataLocalStorage: LocalStorage {
     let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
     do {
       try CoreDataStack.persistentStoreCoordinator.execute(deleteRequest, with: CoreDataStack.managedObjectContext)
+      CoreDataStack.saveContext()
     } catch {
       print("CoreData delete objects failed: \(error.localizedDescription)")
     }
