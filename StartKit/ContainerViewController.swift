@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import RxSwift
 
 class ContainerViewController: UIViewController {
+  let loaclStorage = CoreDataLocalStorage()
+  let disposeBag = DisposeBag()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -17,9 +20,7 @@ class ContainerViewController: UIViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    if !loggedIn() {
-      showLoginViewController()
-    }
+    showLoginViewControllerIfNeeded()
   }
   
   func showLoginViewController() {
@@ -43,7 +44,15 @@ class ContainerViewController: UIViewController {
     viewController.didMove(toParentViewController: self)
   }
   
-  func loggedIn() -> Bool {
-    return KeychainAccessor().currentAccount()?.account != nil && KeychainAccessor().currentAccount()?.password != nil
+  func showLoginViewControllerIfNeeded() {
+    loaclStorage.queryOne(withMapper: UserMapper())
+      .observeOn(MainScheduler.instance)
+      .subscribe(onNext: { [unowned self] userProfile in
+        if userProfile == nil {
+          self.showLoginViewController()
+        }
+      }, onError: { error in
+        print("CoreData fetch user failed: \(error)")
+      }).disposed(by: disposeBag)
   }
 }

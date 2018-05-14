@@ -31,10 +31,14 @@ class GitHubEventsInteractor: GitHubEventsInteractorProtocol {
     localStorage.queryOne(withMapper: UserMapper())
       .observeOn(MainScheduler.instance)
       .subscribe(onNext: { [weak self] userProfile in
-        guard let strongSelf = self, let username = userProfile?.login, let password = strongSelf.keychainAccessor.currentAccount()?.password else {
-          self?.presenter.configureEventList(with: [])
-          return
+        
+        guard let strongSelf = self,
+          let username = userProfile?.login,
+          let password = strongSelf.keychainAccessor.currentAccount()?.password else {
+            self?.presenter.configureEventList(with: [])
+            return
         }
+
         let request = GitHubEventsRequest(username: username, password: password)
         strongSelf.client.send(request).observeOn(MainScheduler.instance)
           .subscribe(onNext: { [weak self] events in
