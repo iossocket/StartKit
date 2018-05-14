@@ -26,19 +26,23 @@ class GitHubEventsInteractor: GitHubEventsInteractorProtocol {
   }
   
   func loadEvents() {
-    localStorage.queryOne(withMapper: UserMapper()) { [weak self] (userProfile, error) in
-      guard let strongSelf = self, let username = userProfile?.login else {
-        self?.presenter.configureEventList(with: [])
-        return
-      }
-      
-      let request = GitHubEventsRequest(username: username)
-      strongSelf.client.send(request).observeOn(MainScheduler.instance)
-        .subscribe(onNext: { [weak self] events in
-          self?.presenter.configureEventList(with: events)
+    localStorage.queryOne(withMapper: UserMapper())
+      .observeOn(MainScheduler.instance)
+      .subscribe(onNext: { [weak self] userProfile in
+        guard let strongSelf = self, let username = userProfile?.login else {
+          self?.presenter.configureEventList(with: [])
+          return
+        }
+        let request = GitHubEventsRequest(username: username)
+        strongSelf.client.send(request).observeOn(MainScheduler.instance)
+          .subscribe(onNext: { [weak self] events in
+            self?.presenter.configureEventList(with: events)
+            }, onError: { error in
+              print("RxClient fetching events failed: \(error.localizedDescription)")
+          }).disposed(by: strongSelf.disposeBag)
+        
         }, onError: { error in
-          print("RxClient fetching events failed: \(error.localizedDescription)")
-        }).disposed(by: strongSelf.disposeBag)
-    }
+          print("CoreData fetch userProfile failed: \(error.localizedDescription)")
+      }).disposed(by: disposeBag)
   }
 }

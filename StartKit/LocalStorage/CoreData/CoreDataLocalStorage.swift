@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import RxSwift
 
 class CoreDataLocalStorage: LocalStorage {
   func save<M: DBMapper>(object: M.Domain, mapper: M) {
@@ -29,6 +30,23 @@ class CoreDataLocalStorage: LocalStorage {
       completion(domain, nil)
     } catch {
       completion(nil, error)
+    }
+  }
+  
+  func queryOne<M: DBMapper>(withMapper mapper: M) -> Observable<M.Domain?> {
+    let request = NSFetchRequest<NSFetchRequestResult>(entityName: mapper.entityName)
+    request.fetchLimit = 1
+    
+    do {
+      guard
+        let fetchedObjects = try CoreDataStack.managedObjectContext.fetch(request) as? [M.DBObject],
+        let object = fetchedObjects.first,
+        let domain = mapper.map(dbObject: object) else {
+          return Observable.just(nil)
+      }
+      return Observable.just(domain)
+    } catch {
+      return Observable.error(error)
     }
   }
   
