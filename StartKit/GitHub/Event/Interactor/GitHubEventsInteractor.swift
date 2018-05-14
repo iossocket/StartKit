@@ -28,6 +28,7 @@ class GitHubEventsInteractor: GitHubEventsInteractorProtocol {
   func loadEvents() {
     localStorage.queryOne(withMapper: UserMapper()) { [weak self] (userProfile, error) in
       guard let strongSelf = self, let username = userProfile?.login else {
+        self?.presenter.configureEventList(with: [])
         return
       }
       

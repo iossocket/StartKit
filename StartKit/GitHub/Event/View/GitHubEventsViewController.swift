@@ -28,6 +28,10 @@ class GitHubEventsViewController: UIViewController {
     GitHubEventConfiguration.configure(viewController: self)
     setupTableView()
     setupRefreshControl()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
     interactor.loadEvents()
     refreshControl.beginRefreshing()
   }
