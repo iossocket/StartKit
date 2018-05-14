@@ -494,7 +494,6 @@
 		D2C0C9788FC9850E9468F687 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				D2C0CEE2AB1BFA9856A3CF2D /* OAuth */,
 				D2C0CAA2E02FEB0D54DAB48A /* Basic */,
 			);
 			path = Login;
@@ -510,13 +509,6 @@
 				7C63A4D920A46BCA00DF5D47 /* View */,
 			);
 			path = Basic;
-			sourceTree = "<group>";
-		};
-		D2C0CEE2AB1BFA9856A3CF2D /* OAuth */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = OAuth;
 			sourceTree = "<group>";
 		};
 		F3BA2B02BDE988BC1362EF99 /* Pods */ = {
