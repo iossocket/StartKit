@@ -53,6 +53,7 @@
 		D0315D5E1D9604980058DC64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0315D5D1D9604980058DC64 /* Assets.xcassets */; };
 		D0315D611D9604980058DC64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0315D5F1D9604980058DC64 /* LaunchScreen.storyboard */; };
 		D0315D771D9604980058DC64 /* StartKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0315D761D9604980058DC64 /* StartKitUITests.swift */; };
+		D2C0CFA357EFFD75D2F6459A /* GitHubLoginInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0CC26F4C9904A8625F32B /* GitHubLoginInteractorSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,7 @@
 		D0315D721D9604980058DC64 /* StartKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StartKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0315D761D9604980058DC64 /* StartKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartKitUITests.swift; sourceTree = "<group>"; };
 		D0315D781D9604980058DC64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2C0CC26F4C9904A8625F32B /* GitHubLoginInteractorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubLoginInteractorSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -443,6 +445,7 @@
 		7CE72E8720BC69ED002A841D /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				D2C0CC26F4C9904A8625F32B /* GitHubLoginInteractorSpec.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -931,6 +934,7 @@
 				7CE72E8520BC6011002A841D /* MockCoreDataStack.swift in Sources */,
 				7CE72E8220BC5FD1002A841D /* UserProfileFactory.swift in Sources */,
 				7CEBB8AA20BAEFB100C526F4 /* CoreDataLocalStorageSpec.swift in Sources */,
+				D2C0CFA357EFFD75D2F6459A /* GitHubLoginInteractorSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

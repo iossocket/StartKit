@@ -8,7 +8,14 @@
 
 import Foundation
 
-struct KeychainAccessor {
+protocol KeychainAccessorProtocol {
+  func currentAccount() -> (account: String, password: String)?
+  func savePassword(_ password: String, into account: String)
+  func readPassword(for account: String) -> String
+  func clearAccount()
+}
+
+struct KeychainAccessor: KeychainAccessorProtocol {
   func currentAccount() -> (account: String, password: String)? {
     do {
       let passwordItems = try KeychainPasswordItem.passwordItems(forService: KeychainConfiguration.serviceName, accessGroup: KeychainConfiguration.accessGroup)

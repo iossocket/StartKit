@@ -19,10 +19,10 @@ class GitHubLoginInteractor: GitHubLoginInteractorProtocol {
   private let client: RxClient
   private let localStorage: LocalStorage
   private let presenter: GitHubLoginPresenterProtocol
-  private let keychainAccessor: KeychainAccessor
+  private let keychainAccessor: KeychainAccessorProtocol
   private let disposeBag: DisposeBag = DisposeBag()
   
-  init(client: RxClient, localStorage: LocalStorage, keychainAccessor: KeychainAccessor, presenter: GitHubLoginPresenterProtocol) {
+  init(client: RxClient, localStorage: LocalStorage, keychainAccessor: KeychainAccessorProtocol, presenter: GitHubLoginPresenterProtocol) {
     self.client = client
     self.localStorage = localStorage
     self.keychainAccessor = keychainAccessor
