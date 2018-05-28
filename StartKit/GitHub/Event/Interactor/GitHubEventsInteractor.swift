@@ -44,11 +44,11 @@ class GitHubEventsInteractor: GitHubEventsInteractorProtocol {
           .subscribe(onNext: { [weak self] events in
             self?.presenter.configureEventList(with: events)
             }, onError: { error in
-              print("RxClient fetching events failed: \(error.localizedDescription)")
+              print("RxClient fetching events failed: \(error)")
           }).disposed(by: strongSelf.disposeBag)
 
         }, onError: { error in
-          print("CoreData fetch userProfile failed: \(error.localizedDescription)")
+          print("CoreData fetch userProfile failed: \(error)")
       }).disposed(by: disposeBag)
   }
 }

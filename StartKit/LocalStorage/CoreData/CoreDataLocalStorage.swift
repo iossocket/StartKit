@@ -46,7 +46,7 @@ class CoreDataLocalStorage: LocalStorage {
       try coredataStack.managedObjectContext.execute(deleteRequest)
       coredataStack.saveContext()
     } catch {
-      print("CoreData delete objects failed: \(error.localizedDescription)")
+      print("CoreData delete objects failed: \(error)")
     }
   }
 }

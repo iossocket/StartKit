@@ -41,7 +41,7 @@ class GitHubLoginInteractor: GitHubLoginInteractorProtocol {
         self?.localStorage.save(object: response, mapper: UserMapper())
         self?.keychainAccessor.savePassword(password, into: emailOrUsername)
       }, onError: { error in
-        print("GitHub Login failed: \(error.localizedDescription)")
+        print("GitHub Login failed: \(error)")
       }).disposed(by: disposeBag)
   }
   

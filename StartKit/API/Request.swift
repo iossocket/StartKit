@@ -40,7 +40,7 @@ extension Data {
     do {
       return try decoder.decode(T.self, from: self)
     } catch {
-      print(error.localizedDescription)
+      print(error)
       return nil
     }
   }
