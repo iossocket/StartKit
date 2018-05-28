@@ -27,6 +27,22 @@ class GitHubLoginInteractorSpec: QuickSpec {
       mockPresenter = MockGitHubLoginPresenter()
       interactor = GitHubLoginInteractor(client: mockClient, localStorage: mockLocalStorage, keychainAccessor: mockKeychainAccessor, presenter: mockPresenter)
     }
+
+    describe("clearLoginInfo") {
+      beforeEach {
+        reset()
+        interactor.clearLoginInfo()
+      }
+
+      it("calls keychain accessor to clear account") {
+        expect(mockKeychainAccessor.clearAccountInvolvedCount) == 1
+      }
+
+      it("calls local storage to delete all objects for user") {
+        expect(mockLocalStorage.deleteAllObjectsInvolvedCount) == 1
+        expect(mockLocalStorage.spy.params["deleteAllObjects"] as? String) == "User"
+      }
+    }
   }
 }
 
@@ -55,6 +71,8 @@ private class MockLocalStorage: LocalStorage {
 
   var queryOneMethodReturnValue: Any?
 
+  var spy = Spy()
+
   func save<M: DBMapper>(object: M.Domain, mapper: M) {
     saveInvolvedCount += 1
   }
@@ -66,6 +84,7 @@ private class MockLocalStorage: LocalStorage {
 
   func deleteAllObjects(for entityName: String) {
     deleteAllObjectsInvolvedCount += 1
+    spy.params["deleteAllObjects"] = entityName
   }
 }
 
