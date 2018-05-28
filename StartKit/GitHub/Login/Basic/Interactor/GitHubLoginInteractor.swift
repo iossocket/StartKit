@@ -10,7 +10,6 @@ import Foundation
 import RxSwift
 
 protocol GitHubLoginInteractorProtocol {
-  func tryLoginViaKeychain()
   func login(withEmailOrUsername: String, password: String)
   func loginViaOAuth()
   func clearLoginInfo()
@@ -28,14 +27,6 @@ class GitHubLoginInteractor: GitHubLoginInteractorProtocol {
     self.localStorage = localStorage
     self.keychainAccessor = keychainAccessor
     self.presenter = presenter
-  }
-  
-  func tryLoginViaKeychain() {
-    guard let account = keychainAccessor.currentAccount()?.account, let password = keychainAccessor.currentAccount()?.password else {
-      return
-    }
-    // TODO: Presenter show loading
-    login(withEmailOrUsername: account, password: password)
   }
   
   func login(withEmailOrUsername emailOrUsername: String, password: String) {
