@@ -43,7 +43,7 @@ class CoreDataLocalStorage: LocalStorage {
     let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
     let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
     do {
-      try coredataStack.persistentStoreCoordinator.execute(deleteRequest, with: coredataStack.managedObjectContext)
+      try coredataStack.managedObjectContext.execute(deleteRequest)
       coredataStack.saveContext()
     } catch {
       print("CoreData delete objects failed: \(error.localizedDescription)")

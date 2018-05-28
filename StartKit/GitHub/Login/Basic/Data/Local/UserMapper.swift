@@ -14,9 +14,10 @@ struct UserMapper: DBMapper {
   typealias Domain = UserProfile
   
   let entityName: String = "User"
+  let context: NSManagedObjectContext
   
-  private var context: NSManagedObjectContext {
-    return CoreDataStack.shared.managedObjectContext
+  init(context: NSManagedObjectContext = CoreDataStack.shared.managedObjectContext) {
+    self.context = context
   }
   
   private var entityDescription: NSEntityDescription? {
