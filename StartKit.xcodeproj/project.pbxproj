@@ -37,6 +37,7 @@
 		7CC7F07420A85589003269B0 /* KeychainAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7F07320A85589003269B0 /* KeychainAccessor.swift */; };
 		7CC7F07620A85B51003269B0 /* KeychainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7F07520A85B51003269B0 /* KeychainConfiguration.swift */; };
 		7CC7F07820A85D99003269B0 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7F07720A85D99003269B0 /* KeychainPasswordItem.swift */; };
+		7CD1EA9920C6AD50000EBDD6 /* GitHubLoginPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD1EA9820C6AD50000EBDD6 /* GitHubLoginPresenterSpec.swift */; };
 		7CD22F4420A5B77700A809FC /* GitHubLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD22F4320A5B77700A809FC /* GitHubLoginRequest.swift */; };
 		7CD22F4720A5BFE300A809FC /* GitHubLoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD22F4620A5BFE300A809FC /* GitHubLoginPresenter.swift */; };
 		7CE72E8220BC5FD1002A841D /* UserProfileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE72E8120BC5FD1002A841D /* UserProfileFactory.swift */; };
@@ -108,6 +109,7 @@
 		7CC7F07320A85589003269B0 /* KeychainAccessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainAccessor.swift; sourceTree = "<group>"; };
 		7CC7F07520A85B51003269B0 /* KeychainConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainConfiguration.swift; sourceTree = "<group>"; };
 		7CC7F07720A85D99003269B0 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
+		7CD1EA9820C6AD50000EBDD6 /* GitHubLoginPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubLoginPresenterSpec.swift; sourceTree = "<group>"; };
 		7CD22F4320A5B77700A809FC /* GitHubLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubLoginRequest.swift; sourceTree = "<group>"; };
 		7CD22F4620A5BFE300A809FC /* GitHubLoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubLoginPresenter.swift; sourceTree = "<group>"; };
 		7CE72E8120BC5FD1002A841D /* UserProfileFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileFactory.swift; sourceTree = "<group>"; };
@@ -448,6 +450,7 @@
 			isa = PBXGroup;
 			children = (
 				D2C0CC26F4C9904A8625F32B /* GitHubLoginInteractorSpec.swift */,
+				7CD1EA9820C6AD50000EBDD6 /* GitHubLoginPresenterSpec.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -944,6 +947,7 @@
 				7C5F333B20BB1FFE00B9D682 /* GitHub.xcdatamodeld in Sources */,
 				7CE72E8520BC6011002A841D /* MockCoreDataStack.swift in Sources */,
 				7CE72E8220BC5FD1002A841D /* UserProfileFactory.swift in Sources */,
+				7CD1EA9920C6AD50000EBDD6 /* GitHubLoginPresenterSpec.swift in Sources */,
 				7CEBB8AA20BAEFB100C526F4 /* CoreDataLocalStorageSpec.swift in Sources */,
 				D2C0CFA357EFFD75D2F6459A /* GitHubLoginInteractorSpec.swift in Sources */,
 				D2C0CBAC471FB3AE351500B1 /* Spy.swift in Sources */,
