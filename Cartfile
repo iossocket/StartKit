@@ -1,6 +1,6 @@
-github "Alamofire/Alamofire" ~> 4.0
-github "onevcat/Kingfisher" ~> 3.0
-github "SnapKit/SnapKit" == 3.0.1
-github "SVProgressHUD/SVProgressHUD"
-github "Hearst-DD/ObjectMapper" ~> 2.0
-github "kishikawakatsumi/KeychainAccess"
+github "Alamofire/Alamofire" ~> 4.8.2
+github "onevcat/Kingfisher" ~> 5.3.1
+github "SnapKit/SnapKit" ~> 4.2.0
+github "SVProgressHUD/SVProgressHUD" ~> 2.2.5
+github "Hearst-DD/ObjectMapper" ~> 3.4.2
+github "kishikawakatsumi/KeychainAccess" ~> 3.2.0
