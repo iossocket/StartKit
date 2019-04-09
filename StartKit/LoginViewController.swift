@@ -68,8 +68,16 @@ class LoginViewController: UIViewController {
         userNameTextField.text = info.name
         avatarImageView.kf.setImage(with: URL(string: info.avatarUrl),
                                     placeholder: UIImage.profileImage(),
-                                    options: [.transition(.fade(1))],
-                                    progressBlock: nil, completionHandler: nil)
+                                    options: [.transition(.fade(1))])
+        {
+            result in
+            switch result {
+            case .success(let value):
+                print("Task done for: \(value.source.url?.absoluteString ?? "")")
+            case .failure(let error):
+                print("Job failed: \(error.localizedDescription)")
+            }
+        }
     }
     
     private func isEmptyInput() -> Bool {
